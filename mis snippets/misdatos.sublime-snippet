@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+Hola, Analisis y desarrollo de sistemas de informacion.
+regional caldas
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>adsi1804230</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
