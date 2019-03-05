@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas HTML5</title>
+</head>
+<body>
+<h2>CUADRADO</h2>
+<canvas id="cuadrado"></canvas>
+<h2>RECTANGULO</h2>
+<canvas id="rectangulo"></canvas>	
+<h2>TRIANGULO</h2>
+<canvas id="triangulo"></canvas>	
+<h2>CIRCULO</h2>
+<canvas id="circulo"></canvas>	
+<h2>CORAZON</h2>
+<canvas id="corazon"></canvas>	
+<h2>TEXTO</h2>
+<canvas id="texto"></canvas>	
+<br><br>
+<script>	
+
+	//cuadrado -------------------
+	 var  canvas  =	document.getElementById('cuadrado');	
+	 var  ctx     =	canvas.getContext('2d');	
+	 ctx.fillStyle='#D3ED2C';	
+	 ctx.fillRect(0,0,100,100); 
+	 // rectangulo ---------------------------------
+	 var  canvas  =	document.getElementById('rectangulo');	
+	 var  ctx     =	canvas.getContext('2d');	
+	 ctx.fillStyle='#AE6528';	
+	 ctx.fillRect(0,0,200,100);
+	// triangulo -----------------------------------
+	 var  canvas  =	document.getElementById('triangulo');	
+	 var  ctx     =	canvas.getContext('2d');	
+	 ctx.fillStyle='#6DA945';	
+	 ctx.moveTo(10, 110);
+	 ctx.lineTo(110, 10);
+	 ctx.lineTo(210, 110);
+	 ctx.fill();
+	 // circulo---------------------------------------
+	  var  canvas  =	document.getElementById('circulo');	
+	 var  ctx     =	canvas.getContext('2d');	
+	 ctx.fillStyle='#47C08E';
+	 ctx.beginPath();
+	 ctx.arc(60, 60, 60, 0, Math.PI*2, true);
+	 ctx.closePath();
+	 ctx.fill();
+	 // corazon -----------------------------------------
+	 var canvas = document.getElementById('corazon');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle='#0000FF';
+    ctx.beginPath();
+    ctx.moveTo(75,40);
+    ctx.bezierCurveTo(75,37,70,25,50,25);
+    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+    ctx.bezierCurveTo(20,80,40,102,75,120);
+    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.fill();
+    // texto-------------------------------------------
+    var  canvas  =	document.getElementById('texto');	
+	var  ctx     =	canvas.getContext('2d');	
+	 ctx.fillStyle='#408BCF';
+	 ctx.font = "60px Tahoma";
+	 ctx.fillText("ADSI", 20, 80);
+</script>
+</body>
+</html>
