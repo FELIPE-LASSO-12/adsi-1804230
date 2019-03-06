@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+h1{
+	background-color: crimson;
+	border-radius: 175sp;
+	color: white;
+	height: 250px;
+	font-family: Arial;
+	line-height: 8em;
+	margin: 120px auto;
+	text-align: center;
+	transition: all 0.3s ease-in;
+	width: 250px
+}
+h1:hover {
+	cursor: pointer;
+	transform: scale(2) rotate(360deg);
+}
+=======
 h1 {
 background-color: crimson;
 border-radius: 175sp;
@@ -14,3 +32,4 @@ h1:hover {
 	cursor: pointer;
 	transform: scale(1.6) rotate(360deg);
 }
+>>>>>>> 69a02955bdd7aa62e4496c037a0096f22c4ae42f
