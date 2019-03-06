@@ -5,9 +5,49 @@
 	<title>Elementos de Entrada HMTL5</title>
 </head>
 <body>
-	<h4>Color</h4>
-	<input type="color">
-	<h4>Fecha</h4>
-	<input type="date">
+	<form action="">
+	 <!-- color -->
+	 <h4>Color</h4>
+	 <input type="color">
+	 <!-- fecha -->
+	 <h4>Fecha</h4>
+	 <input type="date">
+	 <!-- email -->
+	 <h4>Email</h4>
+	 <input type="email" placeholder="Mi mama me mima" required=>
+	 <!-- mes -->
+	 <h4>Mes</h4>
+	 <input type="month">
+	 <!-- numero -->
+	 <h4>Numero</h4>
+	 <input type="number" min="18" max="72" required>
+	 <!-- rango -->
+	 <h4>Rango</h4>
+	 <input type="range" step="5" oninput="orango.value = this.value">
+	 <output id="orango"></output>
+	 <!-- buscar -->
+	 <h4>Buscar</h4>
+	 <input type="search">
+	 <!-- tiempo -->
+	 <h4>Tiempo</h4>
+	 <input type="time">
+	 <!-- url -->
+	 <h4>Url</h4>
+	 <input type="url">
+	 <!-- semana -->
+	 <h4>Semana</h4>
+	 <input type="week">
+	 <!-- lista -->
+	 <h4>lista</h4>
+	 <input	list=“lenguajes”>
+	 <datalist	id=“lenguajes”>
+	 <option	value=“python”>Python</option>
+	 <option	value=“ruby”>Ruby</option>
+	 <option	value=“c#”>C Sharp</option>
+	 <option	value=“php”>PHP</option>
+	 </datalist>
+	 <br><br>
+	 <button type="submit">Validar</button>
+    </form>
 </body>
-</html>
+</html> 
