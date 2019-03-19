@@ -1,0 +1,15 @@
+doctype
+html(lang="es")
+head
+	meta(charset="UTF-8")
+	title Condicionales
+body
+	h1 Condicionales
+	- var autorizacion =true
+	article
+		if autorizacion
+			h3 Autorizado
+			img(src="imgs/ojo.jpg")
+		else
+			h3 No Autorizado
+			img(src="imgs/ojos.jpg")
