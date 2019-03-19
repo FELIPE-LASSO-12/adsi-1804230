@@ -1,0 +1,18 @@
+doctype
+html(lang="es")
+head
+	meta(charset="UTF-8")
+	title CASOS
+body
+	-var amigos = 1
+	case amigos
+		when 0
+			h4 Usted no tiene amigos
+		when 1
+			h4 Usted tiene un amigo
+		when 2
+		when 3
+		when 4
+			h4 Usted tiene algunos amigos
+		default
+			h4 Usted tiene #{amigos} Amigos
