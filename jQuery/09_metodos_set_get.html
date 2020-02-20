@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos SET/GET (Manipulacion DOM)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		pre.code,
+		input.input {
+			border: 1px solid #4f5c6e;
+			display: block;
+			margin: 10px auto;
+			outline: none;
+			padding: 8px;
+			width: 400px;
+		}
+		a.link, a.link:visited {
+			border-bottom: #4f5c6e;
+			display: block;
+			margin: 10px auto;
+			text-align: center;
+			text-decoration: none;
+			width: 418px;
+		}
+		section.options {
+			margin: 10px auto;
+			width: 418px;
+		}
+		section.options div {
+			display: inline-block;
+			width: 200px;
+		}
+		section.options div button {
+			background-color: #4f5c6e;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			display: block;
+			margin: 3px;
+			padding: 8px;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Métodos SET/GET (Manipulacion DOM)</h1>
+		<pre  class="code">
+			<ul>
+				<li>HTML</li>
+				<li>CSS</li>
+				<li>Javascript</li>
+			</ul>
+		</pre>
+		<input type="text" class="input" value="ADSI 1804230">
+		<a href="http://www.google.com" target="_blank" class="link">Enlace a google</a>
+		<section class="options">
+			<div class="get">
+				<h4>GET</h4>
+				<button class="btnGetText">text</button>
+				<button class="btnGetHtml">HTML</button>
+				<button class="btnGetVal">value</button>
+				<button class="btnGetAttr">attribute</button>
+			</div>
+			<div class="set">
+				<h4>SET</h4>
+				<button class="btnSetText">text</button>
+				<button class="btnSetHtml">HTML</button>
+				<button class="btnSetVal">value</button>
+				<button class="btnSetAttr">attribute</button>
+			</div>
+		</section>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			// -----------------------------
+			$('.btnGetText').click(function(event) {
+				alert($('.code').text());
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnGetHtml').click(function(event) {
+				alert($('.code').html());
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnGetVal').click(function(event) {
+				alert($('.input').val());
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnGetAttr').click(function(event) {
+				alert($('.link').attr('href'));
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnSetText').click(function(event) {
+				$('.code').text('PHP -> Mysql -> Git');
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnSetHtml').click(function(event) {
+				$('.code').html('<ol> \
+										<li>PHP</li>\
+										<li>Mysql</li>\
+										<li>Git</li>\
+										</ol>');
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnSetVal').click(function(event) {
+				$('.input').val('Centro de Procesos Industriales y Construcción');
+			});
+			// -----------------------------
+			// -----------------------------
+			$('.btnSetAttr').click(function(event) {
+				$('.link').text('Enlace a Yahoo');
+				$('.link').attr('href', 'http://www.yahoo.es');
+			});
+			// -----------------------------
+		});
+	</script>
+</body>
+</html>

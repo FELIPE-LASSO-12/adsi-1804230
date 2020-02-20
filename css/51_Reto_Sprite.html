@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display|Stylish" rel="stylesheet">
+	<title>Pagina web</title>
+	<style>
+		body {
+			background-color: white;
+
+		}
+	    .logo {
+ 
+			background: url(imgs/spriteweb.png) -260px 220px;
+			height: 110px;
+			width: 190px;
+		}
+		h1 {
+			color: green;
+			font-family: 'Playfair Display', serif;
+			text-decoration: underline gold;
+			padding-top: 15px;
+			font-size: 30px;
+
+		}
+		section.principal div p {
+			text-align: justify;
+			font-size: 20px;
+			font-family: 'Calibri';
+			color: #8FF185;
+
+		}
+		section.principal div p:first-letter {
+			font-size: 30px;
+			background-color: green;
+			color: gold;
+			padding: 4px;
+		}
+		 .navbar{
+		 	display: flex;
+		 	background-color: white;
+
+		 }
+		 .navbar ul {
+		 	padding-top: 20px;
+		 	margin-left: 200px;
+		 	float: right;
+		 }
+		 .navbar ul li {
+		 	display: inline;
+		 	list-style: none;
+		 }
+		 .navbar ul li a {
+		 	text-decoration: none;
+		 	color: black;
+		 	padding: 20px;
+		 	font-family: 'Montserrat', sans-serif;
+		 }
+		 .navbar ul li a:hover{
+		 	background-color: #0EDD57;
+		 	border-left: 10px solid gold;
+		 }
+		 .email{
+		 	padding: 10px;
+		 	border: 1px solid black;
+		 }
+		 .principal{
+		 	display: grid; 
+		 	grid-template-columns: 1fr 1fr 1fr;
+		 	padding: 30px;
+
+		 }
+		 .principal div{
+		    margin: 5px;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		 }
+		 .bcajas{
+		 	border: 0px solid;
+		 	box-shadow: 5px 0px 15px;
+		 	padding: 10px;
+		 	margin:10px;
+		 	background-color: darkgreen;
+		 }
+		div.foto1 {
+			float: left;
+		}
+		 section.principal div.foto1 {
+		 	width: 170px;
+		 	height: 190px;
+		 	background: url(imgs/spriteweb.png);
+		 	background-position: 790px 800px;
+		 	
+		 }
+
+		section.principal div.foto2 {
+		 	width: 300px;
+		 	height: 200px;
+		 	background: url(imgs/spriteweb.png);
+		 	background-position: 329px 594px;
+		 	margin: 0px auto;
+		 }
+		section.principal div.foto3 {
+		 	width: 300px;
+		 	height: 202px;
+		 	background: url(imgs/spriteweb.png);
+		 	background-position: 329px 386px;
+		 	margin: 0px auto;
+		}
+		section.principal2 {			
+			width: 1275px;
+			height: 200px;
+			margin: 0px auto;
+
+
+		}
+		section.principal2 div.foto4 {
+			width: 200px;
+			height: 140px;
+			box-shadow: 0px 0px 30px green,
+			            0px 0px 50px gold inset;
+			background: url(imgs/spriteweb.png);
+			background-position: -245px -240px;
+			margin-right: 50px;
+			margin-left: 40px;
+			margin-bottom:  20px;
+			display: inline-block;
+			
+
+		}
+		section.principal2 div.foto5 {
+			width: 200px;
+			height: 190px;
+			box-shadow: 0px 0px 30px green,
+			            0px 0px 40px gold inset;
+			background: url(imgs/spriteweb.png);
+			background-position: -40px -200px;
+			margin-right: 50px;
+			display: inline-block;
+
+
+		}
+		section.principal2 div.foto6 {
+			width: 100px;
+			height: 100px;
+			box-shadow: 0px 0px 30px green,
+			            0px 0px 20px gold inset;
+			background: url(imgs/spriteweb.png);
+			background-position: -290px 110px;
+			margin-right: 50px;
+			margin-bottom: 40px;
+			margin-left: 5px;
+			display: inline-block;
+
+		}
+		section.principal2 div.foto7 {
+			width: 200px;
+			height: 190px;
+			box-shadow: 0px 0px 30px green,
+			            0px 0px 40px gold inset;
+			background-position: -40px -200px;
+			background: url(imgs/spriteweb.png);
+			background-position: -245px -18px;
+			margin-right: 50px;
+			display: inline-block;
+
+		}
+		section.principal2 div.foto8 {
+			width: 260px;
+			height: 190px;
+			box-shadow: 0px 0px 30px green,
+			            0px 0px 40px gold inset;
+			background: url(imgs/spriteweb.png);
+			background-position: -505px -416px;
+			margin-right: 50px;
+			margin-top: 5px;
+			display: inline-block;
+		}
+		footer ul {
+			width: 100%;
+			height: 110px;
+		 	font-family: 'Montserrat', sans-serif;
+		 	list-style: none;
+		 	
+		 }
+		 footer ul li a{
+		 	color:black;
+		 	text-decoration: none;
+		 }	
+		ul.abajo li.c {
+			list-style-image: url(imgs/face.png) ;
+			
+		}
+		ul.abajo li.q {
+			list-style-image: url(imgs/google.png);
+		}
+		ul.abajo li.r {
+			list-style-image: url(imgs/twitter.png);
+		}
+		ul.abajo li.y {
+			list-style-image: url(imgs/you.png);
+		}
+		section p.parrafo {
+  			width: 300px;
+  			height: 50px;
+  			margin: 0px auto;
+  			text-align: center;
+  			text-shadow: 0px 0px 4px yellow;
+  			color: black;
+		}
+		section p.parrafo:first-letter {
+			font-size: 25px;
+			color: black;
+		}
+	</style>
+</head>
+<body>
+	
+	
+	<nav class="navbar">
+		<div class="logo"><a href=""></a></div>
+		<h1>La Verdad Refresca.</h1>
+	<ul class="arriba">
+		<li class=""><a href="">PRINCIPAL</a></li>
+		<li class=""><a href="">NUESTRA MARCA</a></li>
+		<li class=""><a href="">REGISTRARSE</a></li>
+		<li class=""><a href="">OTROS</a></li>
+	</ul>
+	</nav>
+			<section class="principal">
+			<div class="bcajas caja1"><div class="foto1"></div>
+				<p>Sprite nació en una calurosa tarde de Estados Unidos en 1961 con una única misión: refrescar al mundo. Sin embargo, su llegada a España se produjo de forma gradual entre los años 1975 y 1976. Sprite tiene una personalidad inconfundible, auténtica y un marcado carácter refrescante. Su color y transparente y su inigualable sabor a lima-limón  hacen que Sprite sea ideal para esos momentos en los que te apetece una bebida con un sabor diferente, acompañar tus comidas o expresar tu creatividad combinándolo como tú quieras. Déjate llevar por el poder refrescante de Sprite y vive una experiencia sin colorantes, burbujeante y baja en calorías.</p>
+			</div>
+			<div class="bcajas caja2"><div class="foto2"></div>
+				<p>Sprite es una famosa marca reconocida mundialmente de bebida gaseosa con sabor a limón y sin cafeína producida en 1961 por la empresa "The Coca-Cola Company" (En México fue en 1959 bajo el nombre Clara Sanchez Fanta Limón Claro antes de ser renombrada).</p>
+			</div>
+			<div class="bcajas caja3"><div class="foto3"></div>
+				<p>Sprite nació en una calurosa tarde de Estados Unidos en 1961 con una única misión: refrescar al mundo. Sin embargo, su llegada a España se produjo de forma gradual entre los años 1975 y 1976. Sprite tiene una personalidad inconfundible, auténtica y un marcado carácter refrescante. Su color puro y transparente y su inigualable sabor a lima-limón  hacen que Sprite sea ideal para esos momentos en los que te apetece una bebida con un sabor diferente, acompañar tus comidas o expresar tu creatividad combinándolo como tú quieras. Déjate llevar por el poder refrescante de Sprite y vive una experiencia sin colorantes, burbujeante y baja en calorías.</p>
+			</div>
+		</section>
+		<section class="principal2">
+			<div class="foto4"></div>
+			<div class="foto5"></div>
+			<div class="foto6"></div>
+			<div class="foto7"></div>
+			<div class="foto8"></div>
+		<footer>
+		<ul class="abajo">
+		<li class="c"><a href="">FACEBOOK</a></li>
+		<li class="q"><a href="">GOOGLE+</a></li>
+		<li class="r"><a href="">TWITTER</a></li>
+		<li class="y"><a href="">YOUTUBE</a></li>
+		<p class="parrafo">Todos los derechos reservados &#174; 2019</p>
+	    </ul>
+	    </footer>
+		</section>
+
+</body>
+
+</html>
+	
+	

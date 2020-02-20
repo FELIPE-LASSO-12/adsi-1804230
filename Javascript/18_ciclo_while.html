@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclos (While)</title>
+	<style>
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0 auto;
+			width: 40px;
+		}
+		li{ 
+			border: 5px solid blue;
+			padding: 10px;
+			margin: 2px;
+			text-align: center;
+		 }
+	</style>
+</head>
+<body>
+	<main>
+	<h1>Ciclos (While)</h1>
+	<p>Imprimir los multiplos del 7 desde el 1 hasta el 100.</p>
+	<ul id="numbers"></ul>
+	</main>
+	<script>
+		//Variables
+		var numebers = document.getElementById('numbers');
+		var i = 1;
+		//CICLO WHILE
+		while(1<=100) {
+			if(i%7 == 0) {
+				numbers.innerHTML += "<li>"+i+"</li>";
+			}
+			i++;
+		}
+	</script>
+</body>
+</html>

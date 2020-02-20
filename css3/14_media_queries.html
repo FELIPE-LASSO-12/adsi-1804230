@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Media Queries</title>
+	<style>
+		* {
+			transition: all 0.5s;
+		}
+		body {
+			background-color: #013571;
+			font: 16px Tahoma;
+		}
+		section.main {
+			border: 10px solid #0177db;
+			color: rgba(255,255,255, .6);
+			margin: 20px auto;
+			width: 960px;
+			padding: 10px;
+		}
+		section.main div.logo {
+			background: url(imgs/pepsi01.png) no-repeat;
+			background-size: contain;
+			margin: 0px auto;
+			height: 300px;
+			width: 780px;
+		}
+		section.main h1 span {
+			display: none;
+		}
+		section.main h1 span.r2,
+		section.main h1 span.r3 {
+			display: none;
+		}
+		section.main h1 span.r1 {
+			display: inline;
+		}
+		@media (max-width: 1024px) {
+			section.main {
+			width: 640px;
+		}
+		section.main h1 span.r1,
+		section.main h1 span.r3 {
+			display: none;
+		}
+		section.main h1 span.r2 {
+			display: inline;
+		}
+		section.main div.logo {
+			background: url(imgs/pepsi02.png) no-repeat center;
+			width: 340px;
+			height: 340px;	
+		}
+		@media (max-width: 720px) {
+		section.main {
+			width: 440px;
+		}
+		section.main h1 span.r1,
+		section.main h1 span.r2 {
+			display: none;
+		}
+		section.main h1 span.r3 {
+			display: inline;
+		}
+		}
+		section.main div.logo {
+			background: url(imgs/pepsi03.png) no-repeat center;
+			height: 340px;
+			width: 340px;
+		}
+	</style>
+</head>
+<body>
+	<section class="main">
+		<div class="logo"></div>
+		<h1>
+			Media Queries
+			<span class="r1">( 1024px )</span>
+			<span class="r2">( 720px )</span>
+			<span class="r3">( 440px )</span>
+
+		</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus ex, consectetur. Molestiae id explicabo atque est voluptates obcaecati eaque sed, rem eius maxime, sit accusantium! Fuga culpa aspernatur ducimus cum fugit officia aliquid magnam. Voluptates inventore quam qui tempore, dolor nihil, debitis quod nostrum, cumque officiis tempora provident animi ducimus vitae eum veniam laudantium velit. Sint obcaecati corporis, itaque deleniti voluptatum eos enim, odit aperiam debitis earum nulla numquam necessitatibus, pariatur, iure amet voluptates? Cum maxime nobis obcaecati, odit animi cupiditate excepturi rerum nisi ipsam hic, natus consectetur, soluta magnam voluptate saepe sint, libero voluptatum non corrupti voluptatibus maiores expedita vero. Unde in accusantium, ex ipsum, tenetur necessitatibus optio placeat nam nobis voluptatibus nostrum fugiat sapiente ea illo quaerat. Laboriosam distinctio excepturi quidem minima ut unde magni totam aliquid quasi iste laborum eaque facere, tempore provident optio tempora dolor repudiandae, alias fuga quibusdam facilis error ad deserunt necessitatibus. Quam, suscipit. Pariatur quaerat vel assumenda itaque dignissimos eaque atque eius mollitia totam, expedita. Ipsa in fugiat cumque et doloribus distinctio explicabo earum, quaerat vitae, omnis quisquam vel dolorum aliquid ducimus natus voluptate voluptatibus porro accusantium eius unde repellendus nulla! Ad ipsam dolorem totam, enim nemo numquam temporibus! Officiis quisquam sunt iure?
+		</p>
+	</section>
+</body>
+</html>

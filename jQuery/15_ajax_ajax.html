@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax (Metodo Ajax)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		ul.games {
+			list-style: none;
+			padding: 0;
+			margin: 0px auto;
+			width: 300px;
+		}
+		ul.games li {
+			padding: 4px;
+			border-bottom: 1px solid aqua;
+		}
+		button.btn-load {
+			background-color: #fff;
+			border: 1px solid aqua;
+			color: #0D6666;
+			display: block;
+			font-size: 17px;
+			margin: 40px auto;
+			padding: 10px;
+			width: 150px;
+		}
+		button.btn-load:hover {
+			background-color: aqua;
+			color:#000;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Ajax (Metodo Ajax)</h1>
+		<ul class="games"></ul>
+		<button class="btn-load">Cargar Lista de Juegos</button>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			//Ajax
+			$.ajax({
+				url: 'json/games.json',
+				dataType: 'json',
+			})
+			.done(function(data) {
+				$('.games').html('');
+				$.each(data, function(index, val) {
+					$('.games').append('<li>'+val['name']+' - ('+val['year']+')</li>');
+				});
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+			
+		});
+	</script>
+</body>
+</html>

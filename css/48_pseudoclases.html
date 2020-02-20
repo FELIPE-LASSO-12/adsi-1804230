@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pseudoclases</title>
+	<style>
+		nav, form {
+			margin: 20px auto;
+			width: 160px;
+		}
+		nav ul {
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+		}
+		nav ul li a:link,
+		nav ul li a:visited {			
+			border-left: 10px solid gold;
+			color #fff;
+			display: block;
+			font-family: Arial;
+			margin: 2px;
+			background-color: #0EB0CD;
+			padding: 4px;
+			text-decoration: none;
+			text-indent: 20px;
+
+			
+		}
+		nav ul li a:hover {
+			background-color: white;
+			border-left: 10px solid #02877d;
+		}
+		nav ul li a:active {
+			background-color: teal;
+			border-left: 10px solid white;
+		}
+		nav ul li:first-child a:link,
+		nav ul li:first-child a:visited {
+			color #ff0; 
+		}
+		input {
+			outline: none;
+			padding: 10px;
+			text-decoration: uppercase;
+		}
+		input:focus {
+			background-color: #c7fef2;
+			border: 1px solid #024e49;
+		}
+		p {
+			margin: 20px auto;
+			width: 160px;
+		}
+		p:first-letter {
+			font-size: 3em;
+			background-color: crimson;
+			color: white;
+			padding: 4px;
+		}
+		p:first-line {
+			background-color: #024e49;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Pseudoclases</h1>
+	<nav>
+		<ul>
+			<li><a href="">Inicio</a></li>
+			<li><a href="">Nosotros</a></li>
+			<li><a href="">Servicios</a></li>
+			<li><a href="">Portafolio</a></li>
+			<li><a href="">Contacto</a></li>
+		</ul>
+	</nav>
+	<form action="">
+		<label for="email">
+			<input type="text" id="email" placeholder="Correo Electronico">
+		</label>
+	</form>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas illo officia, aperiam quasi quas distinctio, vitae qui eos magni obcaecati dignissimos dolorum cum rerum, recusandae architecto provident illum velit. Soluta.
+	</p>
+</body>
+</html>

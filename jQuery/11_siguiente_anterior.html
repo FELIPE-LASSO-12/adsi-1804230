@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Siguiente/Anterior (Recorrer el DOM)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		main {
+			width: 1024px;
+		}
+		section.sliders {
+			height: 360px;
+			margin: 0px auto;
+			overflow: hidden;
+			position: relative;
+			width: 1024px;
+		}
+		/*---------section.slider figure---------------*/
+		section.sliders figure {
+			margin: 0px;
+			position: relative;
+		}
+		section.sliders figure:hover figcaption {
+			bottom: 0px;
+		}
+		/*---------section.slider figure figcaption---------------*/
+		section.sliders figure figcaption {
+			background-color: rgba(0,0,0,.8);
+			color: rgba(255,255,255, .8);
+			height: 100px;
+			padding: 10px;
+			position: absolute;
+			bottom: -120px;
+			transition: all 0.5s ease-in;
+			width: 1004px;
+		}
+		section.sliders figure figcaption h4 {
+			border-bottom: rgba(255,255,255,.4);
+			font-size: 1.5em;
+			margin: 0;
+			text-align: left;
+			text-transform: uppercase;
+		}
+		section.sliders figure figcaption p {
+			text-align: justify;
+		}
+		section.sliders div.controls {
+			position: absolute;
+			top: 130px; left: 20px;
+			width: 1024px;
+			z-index: 99;
+		}
+		section.sliders div.controls button {
+			border: none;
+			background-color: rgba(255,255,255,.3);
+			height: 44px;
+			transition: all 0.5s ease-in;
+			position: absolute;
+			width: 37px;
+		}
+		section.sliders div.controls button:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+		}
+		section.sliders div.controls button.btn-prev {
+			background: url(imgs/sliders/fleha_izq.png) no-repeat center;
+		}
+		section.sliders div.controls button.btn-next {
+			background: url(imgs/sliders/fecha_der.png) no-repeat center;
+			right: 40px;
+		}
+		/*-------section.sliders div.dots------------*/
+		section.sliders div.dots {
+			position: absolute;
+			top: 10px; left: 50%;
+			transform: translateX(-50%);
+			width: 150px;
+			z-index: 99;
+		}
+		section.sliders div.dots button {
+			background-color: rgba(255,255,255,.4);
+			border-radius: 20px;
+			border: 1px solid black;
+			font-weight: bold;
+			transition: all 0.5s ease-out;
+			height: 24px;
+			width: 24px;
+		}
+		section.sliders div.dots button:hover {
+			cursor: pointer;
+			transform: scale(1.2);
+		}
+		section.sliders div.dots button.active {
+			background-color: rgba(0,0,0,.5);
+			border: 1px solid #fff;
+			color: #fff;
+		}
+		/*--------section.sliders button.btn-play---------------*/
+		section.sliders button.btn-play {
+			border: 2px solid black;
+			background-color: rgba(255,255,255,.4);
+			border-radius: 20px;
+			font-weight: bold;
+			transition: all 0.5s ease-out;
+			position: absolute;
+			height: 24px;
+			top: 10px; right: 20px;
+			width: 124px;
+			
+		}
+		section.sliders button.btn-play:hover {
+			cursor: pointer;
+			transform: scale(1.1);
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Siguiente/Anterior (Recorrer el DOM)</h1>
+		<section class="sliders">
+			<figure class="slider1 active">
+				<img src="imgs/sliders/spiderman.png">
+				<figcaption>
+					<h4>SpiderMan</h4>
+					<p>
+						Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el cómic de antología Amazing Fantasy # 15 en la Edad de Plata de los cómics.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider2">
+				<img src="imgs/sliders/hulk.png">
+				<figcaption>
+					<h4>Hulk</h4>
+					<p>
+						Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el cómic de antología Amazing Fantasy # 15 en la Edad de Plata de los cómics.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider3">
+				<img src="imgs/sliders/deadpool.png">
+				<figcaption>
+					<h4>Deapool</h4>
+					<p>
+						Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el cómic de antología Amazing Fantasy # 15 en la Edad de Plata de los cómics.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider4">
+				<img src="imgs/sliders/wolverine.png">
+				<figcaption>
+					<h4>Wolverine</h4>
+					<p>
+						Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el cómic de antología Amazing Fantasy # 15 en la Edad de Plata de los cómics.
+					</p>
+				</figcaption>
+			</figure>
+			<figure class="slider5">
+				<img src="imgs/sliders/iron_man.png">
+				<figcaption>
+					<h4>Iron man</h4>
+					<p>
+						Spider-Man es un superhéroe ficticio creado por los escritores y editores Stan Lee y Steve Ditko. Apareció por primera vez en el cómic de antología Amazing Fantasy # 15 en la Edad de Plata de los cómics.
+					</p>
+				</figcaption>
+			</figure>
+			<div class="controls">
+				<button class="btn-prev"></button>
+				<button class="btn-next"></button>
+			</div>
+			<div>
+				<div class="dots">
+					<button class="dot1 active">1</button>
+					<button class="dot2">2</button>
+					<button class="dot3">3</button>
+					<button class="dot4">4</button>
+					<button class="dot5">5</button>
+				</div>
+			</div>
+			<button class="btn-play">&rtrif; Autoplay</button>
+		</section>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$numSliders    	 = $('figure').length;// Numero de sliders
+			$activeSlider 	 = $('figure.active');//Slider activado
+			$numActiveSlider = 1;//Numrero del slider activo
+			
+			//Logica
+			$('figure').not('.active').hide(); // oculto todos los sliders menos el activo
+
+			//Eventos
+			$('.btn-next').click(function(event) {
+				if($numActiveSlider < $numSliders) {
+					$numActiveSlider++;
+					$activeSlider.hide().removeClass('active');
+					$activeSlider.next().addClass('active').fadeIn(1000);
+				} else {
+					$numActiveSlider = 1;
+					$activeSlider.hide().removeClass('active');
+					$('figure').first().addClass('active').fadeIn(1000);
+				}
+				$activeSlider = $('figure.active');
+				activeNumberSlider();
+			});
+
+			//btn-prev
+
+			$('.btn-prev').click(function(event) {
+				if($numActiveSlider > 1) {
+					$numActiveSlider--;
+					$activeSlider.hide().removeClass('active');
+					$activeSlider.prev().addClass('active').fadeIn(1000);
+				} else {
+					$numActiveSlider = 5;
+					$activeSlider.hide().removeClass('active');
+					$('figure').last().addClass('active').fadeIn(1000);
+				}
+				$activeSlider = $('figure.active');
+				activeNumberSlider();
+			});
+
+			//-------------------------------
+			$('.btn-play').click(function(event) {
+				$(this).toggleClass('autoplay');
+				if($(this).hasClass('autoplay')) {
+					$(this).html('&FilledSmallSquare; Stop');
+					$intsliders = setInterval(function() {
+					if($numActiveSlider < $numSliders) {
+					$numActiveSlider++;
+					$activeSlider.hide().removeClass('active');
+					$activeSlider.next().addClass('active').fadeIn(1000);
+				} else {
+					$numActiveSlider = 1;
+					$activeSlider.hide().removeClass('active');
+					$('figure').first().addClass('active').fadeIn(1000);
+				}
+				$activeSlider = $('figure.active');
+				activeNumberSlider();
+				},2000);
+			} else {
+					$(this).html('&rtrif; Autoplay');
+					clearInterval($intsliders);
+				}	
+			});
+			//Funciones 
+
+			//--------------------------------------
+			$('div.dots button').click(function(event) {
+				$('div.dots button').removeClass('active');
+				$(this).addClass('active');
+				$numActiveSlider = parseInt($(this).text());
+				$activeSlider.hide().removeClass('active');
+				$('figure').eq($numActiveSlider-1).addClass('active').fadeIn(1000);
+				$activeSlider = $('figure.active');
+			});
+			function activeNumberSlider() {
+				$('div.dots button').removeClass('active');
+				$('div.dots button').each(function(index, el) {
+					if($numActiveSlider == index + 1) {
+						$(el).addClass('active');
+					}
+				});
+			}
+		});
+	</script>
+</body>
+</html>

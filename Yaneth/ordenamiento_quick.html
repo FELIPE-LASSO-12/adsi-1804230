@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ordenamiento Quick</title>
+</head>
+<body>
+  <button type="button" name="button" onclick="quicksort([6,4,12,5,-1323,99,69])">Ordenar Asc</button>
+  <p id="ver"></p>
+  <button type="button" name="button" onclick="quicksortDesc([6,4,12,5,-1323,99,69])">Ordenar Desc</button>
+  <p id="ver2"></p>
+    <script>
+      function pivote(arr,inicio=0,final = arr.length-1) {
+        const swap = (arr,idx1,idx2) => {[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]};
+        //La variable pivote toma el valor que tiene el arreglo en la posicion
+        let pivot = arr[inicio];
+        let swapIdx = inicio;
+        for(let i = inicio + 1; i <= final; i++){
+            if(pivot > arr[i]) {
+              swapIdx++;
+              swap (arr,swapIdx,i);
+            }
+        }
+        swap(arr,inicio,swapIdx);
+        return swapIdx;
+      }
+      function quicksort(arr,left=0,rigth=arr.length-1){
+        if(left < rigth){
+          let pivoteIndex = pivote(arr,left,rigth);
+          //Ordenamiento hacia la izquierda
+          quicksort(arr,left,pivoteIndex-1);
+          //Ordenamiento hacia la derecha
+          quicksort(arr,pivoteIndex+1,rigth);
+        }
+        document.getElementById('ver').innerHTML = arr;
+      }
+
+      function pivoteDesc(arr, inicio = 0, final = arr.length-1) {
+        const swap = (arr,idx1,idx2) => {[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]};
+        //La variable pivote toma el valor que tiene el arreglo en la posicion
+        let pivot = arr[inicio];
+        let swapIdx = inicio;
+        for(let i = inicio + 1; i <= final; i++){
+            if(pivot < arr[i]) {
+              swapIdx++;
+              swap (arr,swapIdx,i);
+            }
+        }
+        swap(arr,inicio,swapIdx);
+        return swapIdx;
+      }
+
+      function quicksortDesc(arr,left=0,rigth=arr.length-1){
+        if(left < rigth){
+          let pivoteIndex = pivoteDesc(arr,left,rigth);
+          //Ordenamiento hacia la izquierda
+          quicksortDesc(arr,left,pivoteIndex-1);
+          //Ordenamiento hacia la derecha
+          quicksortDesc(arr,pivoteIndex+1,rigth);
+        }
+        document.getElementById('ver2').innerHTML = arr;
+      }
+    </script>
+</body>
+</html>

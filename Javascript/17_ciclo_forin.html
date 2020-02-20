@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclo (For/in)</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/tables.css">
+</head>
+<body>
+	<main>
+	<h1>Ciclo (For/in)</h1>
+	<table id="object"></table>
+	</main>
+	<script>
+		//Variables
+		var object = document.getElementById('object');
+		var anime  = {
+			name: 'Shingeki no kyogin',
+			season: 3,
+			year: 2019,
+			caps: 24
+		};
+		for(var data in anime) {
+			object.innerHTML += "<tr><td>" +anime[data]+ "</td></tr>";
+		}
+	</script>
+</body>
+</html>

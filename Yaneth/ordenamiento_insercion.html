@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ordenamiento Por Insercion</title>
+</head>
+<body>
+  <button type="button" name="button" onclick="ordenamientoInsrcion([6,4,12,5,-1323,99,69])">Mostrar</button>
+  <p id="ver"></p>
+  <button type="button" name="button" onclick="ordenamientoInsrcionDesc([6,4,12,5,-1323,99,69])">Mostrar Desc</button>
+  <p id="ver1"></p>
+  <script>
+    function ordenamientoInsrcion(arr){
+        var valorMenor;
+        for(let i = 1; i < arr.length;i++) {
+          valorMenor = arr[i];
+          for(var j = i - 1; j >= 0 && arr[j] > valorMenor; j--){
+            arr[j + 1] = arr[j];
+          }
+          arr[j + 1] = valorMenor;
+        }
+        document.getElementById('ver').innerHTML = arr;
+    }
+
+
+    function ordenamientoInsrcionDesc(arr){
+        var valorMenor;
+        for(let i = 1; i < arr.length;i++) {
+          valorMenor = arr[i];
+          for(var j = i - 1; j >= 0 && arr[j] < valorMenor; j--){
+            arr[j + 1] = arr[j];
+          }
+          arr[j + 1] = valorMenor;
+        }
+        document.getElementById('ver1').innerHTML = arr;
+    }
+  </script>
+</body>
+</html>

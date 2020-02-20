@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fondo (Tamaño)</title>
+	<style>
+		section {
+			background: url(imgs/goku.png)no-repeat center;
+			border: 2px solid orange;
+			width: 500px;
+			margin: 20px auto;
+			height: 400px;
+			box-shadow: 20PX 0px 20px;
+			background-color: black;
+		}
+		section h3 {
+			text-align: center;
+			margin-top: 0px;
+			padding: 20px;
+			background-color: rgba(0,80,0, .3);
+			color: white;
+		}
+		section.t1 {
+			background-size: cover;
+		}
+		section.t2 {
+			background-size: contain;
+		}
+		section.t3 {
+			background-position: top center;
+			background-size: 160%;
+		}
+		section.t4 {
+			background-size: 50px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fondo (Tamaño)</h1>
+	<section class="t1">
+		<h3>background-size: cover</h3>
+	</section>
+	<section class="t2">
+		<h3>background-size: contain</h3>
+	</section>
+	<section class="t3">
+		<h3>background-size: 160%</h3>
+	</section>
+	<section class="t4">
+		<h3>background-size: 50px</h3>
+	</section>
+</body>
+</html>

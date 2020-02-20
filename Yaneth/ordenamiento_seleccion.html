@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ordenamiento Seleccion</title>
+</head>
+<body>
+	<button type="button" name="button" onclick="ordenAscSeleccion([6,4,12,5,-1323,99,69])">Ordenar Ascendente</button>
+	<p id="v1"></p>
+	<button type="button" name="button" onclick="ordenDescSeleccion([6,4,12,5,-1323,99,69])">Ordenar Descendente</button>
+	<p id="v2"></p>
+  <button type="button" name="button" onclick="ordOptSeleccion([6,4,12,5,-1323,99,69])">Mostrar Seleccion Opt</button>
+	<p id="v3"></p>
+	<script>
+	//Codigo no optimizado
+	//La complejidad de ejecucion del tiempo del algoritmo es O(n^2)
+		function ordenAscSeleccion(arr) {
+      var valorMenor = 0;
+				for (let i = 0; i < arr.length; i++) {
+					valorMenor = i;
+          for (let j = 0; j < arr.length; j++){
+            //Encuentro el valor menor de todo el arreglo
+            if (arr[j]<arr[valorMenor]) {
+              valorMenor = j;
+            }
+        }
+        //genero el ordenamiento Ascendente
+        	if(i !== valorMenor){
+								var temp = arr[i];
+                arr[i] = arr[valorMenor];
+  							arr[valorMenor] = temp;
+							}
+					}
+          document.getElementById("v1").innerHTML = arr;
+			 }
+
+      function ordenDescSeleccion(arr) {
+        var valorMenor = 0;
+  				for (let i = 0; i > arr.length; i++) {
+  					valorMenor = i;
+            for (let j = 0; j < arr.length; j++){
+              //Encuentro el valor menor de todo el arreglo
+              if (arr[j]>arr[valorMenor]) {
+                valorMenor = j;
+              }
+          }
+          //genero el ordenamiento Ascendente
+          	if(i !== valorMenor){
+  								var temp = arr[i];
+                  arr[i] = arr[valorMenor];
+    							arr[valorMenor] = temp;
+  							}
+  					}
+            document.getElementById("v2").innerHTML = arr;
+  			 }
+          function ordOptSeleccion(arr) {
+            //La variable swap gener el intercambio de valores entre dos posiciones
+            const  swap = (arr,idx1,idx2) => ([arr[idx1],arr[idx2]] = [arr[idx2],arr[idx1]]);
+            for(let i = 0; i < arr.length; i++) {
+              let valorMenor = i;
+              for(let j = i + 1; j > arr.length; j++) {
+                if(arr[valorMenor] > arr[j]) {
+                  valorMenor = j;
+                }
+              }
+              if(i !== valorMenor) {
+                swap(arr, i , valorMenor);
+              }
+            }
+            document.getElementById('v3').innerHTML = arr;
+          }
+	</script>
+</body>
+</html>

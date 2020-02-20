@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax (Metodo GET)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<style>
+		select {
+			display: block;
+			margin: 10px auto;
+			padding: 7px;
+			width: 160px;
+		}
+		div.loader{
+			background: url(imgs/load.gif) no-repeat center;
+			background-size: 50px;
+			height: 50px;
+			margin: 20px auto;
+			margin: 30px;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Ajax (Metodo GET)</h1>
+		<select class="brands">
+			<option value="">Seleccione marca...</option>
+			<option value="1">ACER</option>
+			<option value="2">ASUS</option>
+			<option value="3">LENOVO</option>
+		</select>
+		<div class="loader"></div>
+		<select class="references"></select>
+		
+		
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			//Logic
+			$('.references').hide();
+			$('.loader').hide();
+			//Event
+			$('.brands').change(function(event) {
+				$brn = $(this).val();
+				$('.loader').show();
+				$('.references').hide();
+
+				//GET
+				$.get('php/references.php', { brn : $brn }, function(data) {
+					setTimeout(function() {
+						$('.loader').hide();
+						$('.references').fadeIn(4000).html(data);
+					},2000);
+				});
+			});
+		});
+	</script>
+	
+</body>
+</html>

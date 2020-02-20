@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Limpiar Elementos FLotantes</title>
+	<style>
+		h3 { 
+		text-align: center;
+		 }
+		 section.cajapadre {
+		 	border: 2px solid blue;
+		 	margin: 0px auto;
+		 	padding: 20px;
+		 	width: 400px;
+		 }
+		 section.cajapadre p {
+			border: 2px solid black;
+		 }
+		 section.cajapadre img{
+			float: left;
+		 }
+		 section.cajapadre p.limpiar {
+		 	clear: left;
+		 }
+	</style>
+</head>
+<body>
+	<h1>Limpiar Elementos FLotantes</h1>
+	<h3>Posicionamiento Float de la Imagen</h3>
+	<section class="cajapadre">
+	<img src="imgs/pikachu.png" width="250">
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempore facere. Consequatur ducimus incidunt est voluptatem ipsam quod, nobis id repudiandae mollitia consequuntur repellat minus dignissimos qui unde voluptates enim quisquam natus, magni? Doloribus, eos assumenda alias dolore, dicta velit eveniet in aperiam at id culpa numquam libero voluptatibus! Voluptate, commodi quis quasi similique in assumenda deleniti quae magnam nemo unde error, architecto aliquid.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque facilis accusantium dolores, vitae labore hic maxime placeat quam temporibus culpa quis voluptates unde ut fugiat ullam veritatis non ratione quo consequatur quidem velit eligendi. Possimus inventore nihil quasi, dolorum reiciendis, eos beatae recusandae, iure soluta ipsam voluptatibus reprehenderit consequatur sequi mollitia commodi, vero odit. Rerum repellat, corrupti perferendis deserunt enim quae accusamus.
+	</p>
+	</section>
+		<h3>Párrafo "limpio" con clear: left</h3>
+	<section class="cajapadre">
+	<img src="imgs/pikachu.png" width="250">
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, tempore facere. Consequatur ducimus incidunt est voluptatem ipsam quod, nobis id repudiandae mollitia consequuntur repellat minus dignissimos 
+	</p>
+	<p class="limpiar ">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque facilis accusantium dolores, vitae labore hic maxime placeat quam temporibus culpa quis voluptates unde ut fugiat ullam veritatis non ratione quo consequatur quidem velit eligendi. Possimus inventore nihil quasi, dolorum reiciendis, eos beatae recusandae, iure soluta ipsam voluptatibus reprehenderit consequatur sequi mollitia commodi, vero odit. Rerum repellat, corrupti perferendis deserunt enim quae accusamus.
+	</p>
+	</section>
+</body>
+</html>

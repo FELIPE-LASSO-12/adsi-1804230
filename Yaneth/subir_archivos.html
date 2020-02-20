@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <title>Reto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ <main>
+    <ul>
+     <li class="img p1" id="1"> </li>
+     <li class="img p2" id="2"> </li>
+     <li class="img p3" id="3"> </li>
+     <li class="img p4" id="4"> </li>
+     <li class="img p5" id="5"> </li>
+    </ul> 
+    <input type="file" id="files" name="files[]" multiple />
+     <output id="list"></output>
+  </main>
+  <hr>
+
+    <main class="ordenar">
+        <h4>Posición</h4>
+        <div class="btn-group">
+          <label class="btn btn-primary mr-3"><input type="radio" name="ordenamiento" id="ordAs">Ascendente</label>
+          <label class="btn btn-primary "><input type="radio" name="ordenamiento" id="ordDe" >Descendente</label>
+        </div>
+
+        <div class="dropdown">
+        <h4>Seleccione</h4>
+      <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Seleccione Ordenamiento
+      </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           <option value="1"  class="dropdown-item">Ordenamiento Burbuja</option >
+           <option value="2"  class="dropdown-item">Ordenamiento Insercion</option >
+           <option value="3"  class="dropdown-item">Ordenamiento Seleccion</option >
+           <option value="4"  class="dropdown-item">Ordenamiento Merge</option >
+           <option value="5"  class="dropdown-item">Ordenamiento Quick</option >
+           <option value="6"  class="dropdown-item">Ordenamiento Radix</option >
+           <option value="7"  class="dropdown-item">Todos los anteriores</option >
+        </div>
+        <hr>
+    </div>
+    <button class="btn btn-danger btnOrdenar">Ordenar</button>
+    </main>
+
+     <br>
+      <div>
+      <div id="div1"></div>
+      <div id="div2"></div>
+      <div id="div3"></div>
+      <div id="div4"></div>
+      <div id="div5"></div>
+      <div id="div6"></div>
+      <div id="div7"></div>
+      <div id="div8"></div>
+      <div id="div9"></div>
+      <div id="div10"></div>
+      <div id="div11"></div>
+      <div id="div12"></div>
+      </div>
+<script>
+      
+      var gallery = "";
+      var output = [];
+      function handleFileSelect(evt) {
+        var files = evt.target.files;
+        
+        for (var i = 0, f; f = files[i]; i++) {
+
+          output.push(parseInt(escape(f.name).slice(0,-4)));
+          var images="<img src=\'"+escape(f.name)+"\'>";
+
+          gallery+=images;
+
+        }
+
+
+        document.getElementById('div2').innerHTML = gallery;
+     }
+
+
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+// ----Ordenamiento Burbuja--------------------------------
+
+function orOptBurbuja(arr) {
+        //variable booleana si cumple o no condicion de break point
+        var noswaps;
+        for (let i = arr.length; i > 0; i--) {
+          noswaps = true;
+          for(let j = 0; j < i - 1; j++){
+            if(arr[j] > arr[j +1]){
+                let temp = arr[j];
+                arr[j] = arr[j +1];
+                arr[j +1] = temp;
+                noswaps =   false;
+          }
+        }
+        if(noswaps)break;
+      }
+      document.getElementById('div2').innerHTML = arr;
+    }
+
+    // ----Ordenamiento Insercion--------------------------------
+
+    function ordenamientoInsercion(arr){
+        var valorMenor;
+        for(let i = 1; i < arr.length;i++) {
+          valorMenor = arr[i];
+          for(var j = i - 1; j >= 0 && arr[j] > valorMenor; j--){
+            arr[j + 1] = arr[j];
+          }
+          arr[j + 1] = valorMenor;
+        }
+        document.getElementById('div3').innerHTML = arr;
+    }
+
+
+    function ordenamientoInsercionDesc(arr){
+        var valorMenor;
+        for(let i = 1; i < arr.length;i++) {
+          valorMenor = arr[i];
+          for(var j = i - 1; j >= 0 && arr[j] < valorMenor; j--){
+            arr[j + 1] = arr[j];
+          }
+          arr[j + 1] = valorMenor;
+        }
+        document.getElementById('div4').innerHTML = arr;
+    }
+
+    // ----Ordenamiento Seleccion--------------------------------
+
+
+    function ordenAscSeleccion(arr) {
+      var valorMenor = 0;
+        for (let i = 0; i < arr.length; i++) {
+          valorMenor = i;
+          for (let j = 0; j < arr.length; j++){
+            //Encuentro el valor menor de todo el arreglo
+            if (arr[j]<arr[valorMenor]) {
+              valorMenor = j;
+            }
+        }
+        //genero el ordenamiento Ascendente
+          if(i !== valorMenor){
+                var temp = arr[i];
+                arr[i] = arr[valorMenor];
+                arr[valorMenor] = temp;
+              }
+          }
+          document.getElementById("div5").innerHTML = arr;
+       }
+
+      function ordenDescSeleccion(arr) {
+        var valorMenor = 0;
+          for (let i = 0; i > arr.length; i++) {
+            valorMenor = i;
+            for (let j = 0; j < arr.length; j++){
+              //Encuentro el valor menor de todo el arreglo
+              if (arr[j]>arr[valorMenor]) {
+                valorMenor = j;
+              }
+          }
+          //genero el ordenamiento Ascendente
+            if(i !== valorMenor){
+                  var temp = arr[i];
+                  arr[i] = arr[valorMenor];
+                  arr[valorMenor] = temp;
+                }
+            }
+            document.getElementById("div6").innerHTML = arr;
+         }
+
+    // ----Ordenamiento Merge--------------------------------
+
+      function mezclaArreglos(arr1,arr2){
+        let resultado = [];
+        let i = 0;
+        let j = 0;
+        while(i < arr1.length && j < arr2.length){
+          if(arr2[j] > arr1[i]){
+            resultado.push(arr1[i]);
+            i++;
+          } else {
+            resultado.push(arr2[j]);
+            j++;
+          }
+        }
+        while(i < arr1.length){
+          resultado.push(arr1[i]);
+          i++;
+        }
+        while(j < arr2.length){
+          resultado.push(arr2[j]);
+          j++;
+      }
+      return resultado;
+    }
+
+
+        function ordenamientoMergeA(arr){
+            if(arr.length <= 1){
+              return arr;
+            }
+            let mitadArreglo = Math.floor(arr.length/2);
+            let left = ordenamientoMergeA(arr.slice(0,mitadArreglo));
+            let right = ordenamientoMergeA(arr.slice(mitadArreglo));
+            document.getElementById('div7').innerHTML = mezclaArreglos(left,right);
+        }
+
+     // ----Ordenamiento Quick--------------------------------
+
+    function pivote(arr,inicio=0,final = arr.length-1) {
+        const swap = (arr,idx1,idx2) => {[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]};
+        //La variable pivote toma el valor que tiene el arreglo en la posicion
+        let pivot = arr[inicio];
+        let swapIdx = inicio;
+        for(let i = inicio + 1; i <= final; i++){
+            if(pivot > arr[i]) {
+              swapIdx++;
+              swap (arr,swapIdx,i);
+            }
+        }
+        swap(arr,inicio,swapIdx);
+        return swapIdx;
+      }
+      function quicksort(arr,left=0,rigth=arr.length-1){
+
+        var gallery2="";
+          for(var k = 0; k <arr.length; k++)
+          {
+            var images="<img src=\'"+arr[k]+".png"+"\'>";
+            gallery2 += images;
+          }
+          gallery2+="<br>";
+
+        if(left < rigth){
+          let pivoteIndex = pivote(arr,left,rigth);
+          //Ordenamiento hacia la izquierda
+          quicksort(arr,left,pivoteIndex-1);
+          //Ordenamiento hacia la derecha
+          quicksort(arr,pivoteIndex+1,rigth);
+        }
+        document.getElementById('div8').innerHTML = gallery2;
+        return gallery2;
+      }
+
+      function pivoteDesc(arr, inicio = 0, final = arr.length-1) {
+        const swap = (arr,idx1,idx2) => {[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]};
+        //La variable pivote toma el valor que tiene el arreglo en la posicion
+        let pivot = arr[inicio];
+        let swapIdx = inicio;
+        for(let i = inicio + 1; i <= final; i++){
+            if(pivot < arr[i]) {
+              swapIdx++;
+              swap (arr,swapIdx,i);
+            }
+        }
+        swap(arr,inicio,swapIdx);
+        return swapIdx;
+      }
+
+      function quicksortDesc(arr,left=0,rigth=arr.length-1){
+        var gallery2="";
+        for(var k = 0; k <arr.length; k++)
+        {
+          var images="<img src=\'"+arr[k]+".png"+"\'>";
+          gallery2 += images;
+        }
+        gallery2+="<br>";
+        if(left < rigth){
+          let pivoteIndex = pivoteDesc(arr,left,rigth);
+          //Ordenamiento hacia la izquierda
+          quicksortDesc(arr,left,pivoteIndex-1);
+          //Ordenamiento hacia la derecha
+          quicksortDesc(arr,pivoteIndex+1,rigth);
+        }
+        document.getElementById('div9').innerHTML = arr;
+      }
+
+
+      //-----------TIEMPO de ordenamientos OJO ...........SJBJH  ADSJKNKmlsdknjdvhb
+    //   btnOrdenar.onclick = function() {
+    //     gallery2="";
+
+    //   let inicio = performance.now();
+    //     gallery2+=quickSort(output);
+    //     let final = performance.now();
+    //     let result=final-inicio;
+
+    //   gallery2+= "TIEMPO: ";
+    //   gallery2+=result;
+    //   document.getElementById('div?').innerHTML= gallery2;//Falta organizar div
+    // }
+
+
+      //------------Ordenamiento Radix-----------------------------------
+
+      function getDigit(num, digito) {
+        return Math.floor(Math.abs(num)/Math.pow(10,digito))% 10;
+        }
+        // Obtener cantidad de digitos de un numero ingresado por el usuario
+        function conteoDigitosNro(num) {
+          if (num == 0) return 1;
+          return Math.floor(Math.log10(Math.abs(num)))+1;
+        }
+
+        //Obtener mayor cantidad de digitos entre todo el arreglo
+        function cantidadMayorDigi(arregloNumeros) {
+          let maximaCantDigitos = 0;
+          for (var i = 0; i < arregloNumeros.length; i++) {
+            //conteoDigitosNro(arregloNumeros[i] devuelve el valor de determinada
+            //posicion del array y es lo que le ingresa como parametro a la funcion conteoDigitosNro
+            maximaCantDigitos = Math.max(maximaCantDigitos,conteoDigitosNro(arregloNumeros[i]));
+          }
+          return maximaCantDigitos;
+        }
+
+        function ordenamientoRadix(arregloNumeros) {
+          let  maximaCantDigitos = cantidadMayorDigi(arregloNumeros);
+          //EL numero de con mayor cantidad de digitos determina la cantidad de iteraciones de la funcion
+          for (let i = 0; i < maximaCantDigitos; i++) {
+            let posicionamientoNro = Array.from({length: 10},()=>[]);
+            for (var j = 0; j < arregloNumeros.length; j++) {
+              let digitos = getDigit(arregloNumeros[j],i);
+              //Estoy llenando el arreglo vacio co nombre posicionamientoNro
+              posicionamientoNro[digitos].push(arregloNumeros[j]);
+            }
+            arregloNumeros=[].concat(...posicionamientoNro);
+          }
+          document.getElementById('div10').innerHTML =  arregloNumeros.reverse();
+        }
+        function ordenamientoRadixDesc(arregloNumeros) {
+          let  maximaCantDigitos = cantidadMayorDigi(arregloNumeros);
+          //EL numero de con mayor cantidad de digitos determina la cantidad de iteraciones de la funcion
+          for (let i = 0; i < maximaCantDigitos; i++) {
+            let posicionamientoNro = Array.from({length: 10},()=>[]);
+            for (var j = 0; j < arregloNumeros.length; j++) {
+              let digitos = getDigit(arregloNumeros[j],i);
+              //Estoy llenando el arreglo vacio co nombre posicionamientoNro
+              posicionamientoNro[digitos].push(arregloNumeros[j]);
+            }
+            arregloNumeros=[].concat(...posicionamientoNro);
+          }
+          document.getElementById('div11').innerHTML =  arregloNumeros.reverse();
+        }
+
+
+  
+  
+</script>
+  <script src="js/jquery-3.4.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

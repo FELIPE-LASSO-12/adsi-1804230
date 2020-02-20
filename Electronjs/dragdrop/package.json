@@ -1,0 +1,20 @@
+{
+  "name": "DragDrop",
+  "version": "1.0.0",
+  "description": "Drag and Drop pokeballs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/FELIPE-LASSO-12/1804230",
+  "keywords": [
+    "Electron",
+    "jQuery"
+  ],
+  "author": "PILA",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.0.7",
+    "electron-packager": "^14.0.5"
+  }
+}

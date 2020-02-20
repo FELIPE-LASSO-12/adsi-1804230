@@ -1,0 +1,108 @@
+body {
+	font: 16px Arial;
+}
+h1 {
+	text-align: center;
+	color: #33588763;
+}
+main.table {
+	background: url(../imgs/base.png);
+	height: 720px;
+	margin: 20px auto;
+	position: relative;
+	width: 480px;
+}
+main.table section.attributes {
+	height: 428px;
+	left: 170px;
+	position: absolute;
+	top: 91px;
+	width: 300px;
+}
+section.attributes ul {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
+section.attributes ul li {
+	color: #DE1422;
+	font-size: 1.5em;
+	padding: 21px 0px;
+	margin-bottom: 2.5px;
+	text-shadow: 0px 0px 3px blue;
+}
+main.table section.methods {
+	bottom: 4px;
+	height: 99px;
+	left: 6px;
+	position: absolute;
+	width: 466px;
+}
+
+section.methods button {
+	border: none;
+	border-radius: 100px;
+	height: 70px;
+	margin: 10px 4px 0px 9px;
+	width: 72px;
+}
+section.methods button:first-of-type {
+	margin-left: 15px;
+}
+section.methods button:last-of-type {
+	margin-right: 9px;
+}
+section.methods button:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+section.methods button#btnOn {
+	background: transparent url(../imgs/btn-play.png.png) no-repeat center;
+}
+section.methods button#btnOff {
+	background: transparent url(../imgs/btn-off.png.png) no-repeat center;
+}
+section.methods button#btnStop {
+	background: transparent url(../imgs/btn-stop.png.png) no-repeat center;
+}
+section.methods button#btnFordward {
+	background: transparent url(../imgs/btn-forward.png.png) no-repeat center;
+}
+section.methods button#btnBackward {
+	background: transparent url(../imgs/btn-backward.png.png) no-repeat center;
+}
+section#path {
+	height: 213px;
+	left: -200px;
+	position: absolute;
+	top: 200px;
+	width: 645px;
+}
+figure#vhc {
+	background: url(../imgs/gallardo.png) no-repeat center;
+	background-size: 280px;
+	height: 213px;
+	position: relative;
+	width: 645px;
+}
+figure#vhc.on {
+	animation: animOn 0.1ms 1s linear infinite;
+}
+section#path.fordward {
+	animation: animFordward 4s linear infinite;
+}
+section#path.backward {
+	animation-direction: reverse;
+}
+section#path.stop {
+	animation-play-state: paused; 
+}
+@keyframes animOn {
+	0%, 100% {top:0px;}
+	50% {top: -2px;}
+}
+@keyframes animFordward {
+	0%,  {left: 0px;}
+	100% {left: 880px;}
+}

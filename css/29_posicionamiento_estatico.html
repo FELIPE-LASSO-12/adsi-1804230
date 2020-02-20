@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Posicionamiento estatico</title>
+	<style>
+		section.cajapadre {
+			border: 2px solid green;
+			width: 500px;
+			margin: 0px auto;
+		}
+		section.cajapadre div.cajahija {
+			border: 2px solid lime;
+			margin: 5px;
+			padding: 20px;
+		}
+		h4 {
+			text-align: center;
+		}
+		section.cajapadre div.caja {
+			border: 2px dashed blue;
+			margin: 5px;
+			padding: 15px;
+		}
+		section.cajapadre div.caja a {
+			border: 2px solid #aaeeff;
+			margin: 5px;	
+			padding: 2px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Posicionamiento estatico</h1>
+	<h4>En bloque</h4>
+	<section class="cajapadre">
+		<div class="cajahija">Elemento de Bloque</div>
+		<div class="cajahija">Elemento de Bloque</div>
+		<div class="cajahija">Elemento de Bloque</div>
+	</section>
+	<h4>En linea</h4>
+	<section class="cajapadre">
+		<div class="caja">
+		<a href="">Google</a>
+		<a href="">Yahoo</a>
+		<a href="">Youtube</a>
+		</div>
+	</section>
+</body>
+</html>

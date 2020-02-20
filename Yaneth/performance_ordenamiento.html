@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Performance Ordenamiento</title>
+</head>
+<body>
+    <script type="text/javascript">
+      console.time("ver");
+      var s = "";
+      for(var i=0; i<1000; i++) {
+      	if (i==500)
+      		console.time("ordenamientoBurbuja");
+      	s+=i;
+      }
+      console.timeEnd("ordenamientoBurbuja");
+      //*------------------------*//
+      console.time("ver2");
+      var s = "";
+      for(var i=0; i<1000; i++) {
+      	if (i==500)
+      		console.time("ordenamientoDescBurbuja");
+      	s+=i;
+      }
+      console.timeEnd("ordenamientoDescBurbuja");
+      //*------------------------*//
+    console.time("ver3");
+    var s = "";
+    for(var i=0; i<1000; i++) {
+    	if (i==500)
+    		console.time("orOptBurbuja");
+    	s+=i;
+    }
+    console.timeEnd("orOptBurbuja");
+    </script>
+</body>
+</html>

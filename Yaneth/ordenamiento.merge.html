@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ordenamiento Merge</title>
+</head>
+<body>
+  <!-- Utiliza tecnicas que divide y venceras -->
+  <button type="button" name="button" onclick="ordenamientoMergeA([6,4,12,5,-1323,99,69])">Ordenar</button>
+  <p id="verA"></p>
+  <script>
+    function mezclaArreglos(arr1,arr2){
+      let resultado = [];
+      let i = 0;
+      let j = 0;
+      while(i < arr1.length && j < arr2.length){
+        if(arr2[j] > arr1[i]){
+          resultado.push(arr1[i]);
+          i++;
+        } else {
+          resultado.push(arr2[j]);
+          j++;
+        }
+      }
+      while(i < arr1.length){
+        resultado.push(arr1[i]);
+        i++;
+      }
+      while(j < arr2.length){
+        resultado.push(arr2[j]);
+        j++;
+    }
+    return resultado;
+  }
+
+
+        function ordenamientoMergeA(arr){
+            if(arr.length <= 1){
+              return arr;
+            }
+            let mitadArreglo = Math.floor(arr.length/2);
+            let left = ordenamientoMergeA(arr.slice(0,mitadArreglo));
+            let right = ordenamientoMergeA(arr.slice(mitadArreglo));
+            document.getElementById('verA').innerHTML = mezclaArreglos(left,right);
+        }
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title> Menu Burger (Responsive)</title>
+	<link rel="stylesheet" href="css/10_reto_menuburger.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+</head>
+<header>
+	<div class="menu_bar">
+		<a href="#" class="bt-menu"><img src="imgs/burguer.svg"> &nbsp; Menu Hamburguesa</a>
+
+	</div>
+	<nav>
+		<ul>
+			<li><a href="#">Inicio</a></li>
+			<li><a href="#">Nosotros</a></li>
+			<li><a href="#">Portafolio</a></li>
+			<li><a href="#">Servicios</a></li>
+			<li><a href="#">Contacto</a></li>
+		</ul>
+	</nav>
+</header>
+<section>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quisquam fugit quod, molestiae alias. Ratione sunt ea voluptatem, quisquam iste rem esse eum consequuntur aspernatur dolor illum debitis odit, nisi repellat alias, est tempore ipsam voluptas laboriosam aliquid ducimus mollitia. Quaerat et ad sit iste quia assumenda illo laborum, unde fugit. Iusto temporibus facere voluptate repellat, dolorem ex similique vitae rem. Sed excepturi quidem sequi sunt in corporis ab odio, optio vero voluptate autem minima amet, accusamus eligendi voluptas. Minus odio nostrum asperiores sequi magnam ipsam voluptatem in qui, beatae, aspernatur commodi! Quam tempore repudiandae id itaque adipisci perferendis pariatur.
+	</p>
+	<br>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quisquam fugit quod, molestiae alias. Ratione sunt ea voluptatem, quisquam iste rem esse eum consequuntur aspernatur dolor illum debitis odit, nisi repellat alias, est tempore ipsam voluptas laboriosam aliquid ducimus mollitia. Quaerat et ad sit iste quia assumenda illo laborum, unde fugit. Iusto temporibus facere voluptate repellat, dolorem ex similique vitae rem. Sed excepturi quidem sequi sunt in corporis ab odio, optio vero voluptate autem minima amet, accusamus eligendi voluptas. Minus odio nostrum asperiores sequi magnam ipsam voluptatem in qui, beatae, aspernatur commodi! Quam tempore repudiandae id itaque adipisci perferendis pariatur.
+	</p>
+	<br>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quisquam fugit quod, molestiae alias. Ratione sunt ea voluptatem, quisquam iste rem esse eum consequuntur aspernatur dolor illum debitis odit, nisi repellat alias, est tempore ipsam voluptas laboriosam aliquid ducimus mollitia. Quaerat et ad sit iste quia assumenda illo laborum, unde fugit. Iusto temporibus facere voluptate repellat, dolorem ex similique vitae rem. Sed excepturi quidem sequi sunt in corporis ab odio, optio vero voluptate autem minima amet, accusamus eligendi voluptas. Minus odio nostrum asperiores sequi magnam ipsam voluptatem in qui, beatae, aspernatur commodi! Quam tempore repudiandae id itaque adipisci perferendis pariatur.
+	</p>
+	<br>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quisquam fugit quod, molestiae alias. Ratione sunt ea voluptatem, quisquam iste rem esse eum consequuntur aspernatur dolor illum debitis odit, nisi repellat alias, est tempore ipsam voluptas laboriosam aliquid ducimus mollitia. Quaerat et ad sit iste quia assumenda illo laborum, unde fugit. Iusto temporibus facere voluptate repellat, dolorem ex similique vitae rem. Sed excepturi quidem sequi sunt in corporis ab odio, optio vero voluptate autem minima amet, accusamus eligendi voluptas. Minus odio nostrum asperiores sequi magnam ipsam voluptatem in qui, beatae, aspernatur commodi! Quam tempore repudiandae id itaque adipisci perferendis pariatur.
+	</p>
+</section>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+	$(document).ready(main);
+
+	var contador = 1;
+
+	function main (){
+		$('.menu_bar').click(function() {
+			//$('nav').toggle();
+			if(contador == 1){
+				$('nav').animate({
+					left:'0'
+				});
+				contador = 0;
+			} else {
+				contador = 1;
+				$('nav').animate({
+					left:'-100%'
+				});
+			}
+		})
+	};
+    
+</script>
+</body>
+</html>

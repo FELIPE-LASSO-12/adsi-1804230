@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ordenamiento Burbuja</title>
+</head>
+<body>
+	<button type="button" name="button" onclick="ordenamientoBurbuja([6,4,12,5,-1323,99,69])">Ordenar Ascendente</button>
+	<p id="ver"></p>
+	<button type="button" name="button" onclick="ordenamientoDescBurbuja([6,4,12,5,-1323,99,69])">Ordenar Descendente</button>
+	<p id="ver2"></p>
+	<button type="button" name="button" onclick="orOptBurbuja([6,4,12,5,-1323,99,69])">Ordenar Burbuja</button>
+	<p id="ver3"></p>
+	<script>
+	//Codigo no optimizado
+	//La complejidad de ejecucion del tiempo del algoritmo es O(n^2)
+		function ordenamientoBurbuja(arr) {
+			//Recorremos desde el fin del arreglo hasta el inicio
+				for (let i = arr.length; i > 0; i--) {
+					for(let j = 0; j < i - 1; j++){
+							console.log(arr,arr[j],arr[j+1]);
+							if(arr[j] > arr[j + 1]){
+								let temp = arr[j];
+								arr[j] = arr[j + 1];
+								arr[j + 1] = temp;
+							}
+					}
+			 }
+			 document.getElementById("ver").innerHTML = arr;
+		}
+	// *------------------------------------------*//
+		function ordenamientoDescBurbuja(arr) {
+			for (let i = arr.length; i > 0; i--) {
+				for(let j = 0; j < i - 1; j++){
+						console.log(arr,arr[j],arr[j+1]);
+						if(arr[j] < arr[j + 1]){
+							let temp = arr[j];
+							arr[j] = arr[j + 1];
+							arr[j + 1] = temp;
+				}
+		}
+ }
+ document.getElementById("ver2").innerHTML = arr;
+}
+
+			//Codigo optimizado de ordenamiento Burbuja
+			function orOptBurbuja(arr) {
+				//variable booleana si cumple o no condicion de break point
+				var noswaps;
+				for (let i = arr.length; i > 0; i--) {
+					noswaps = true;
+					for(let j = 0; j < i - 1; j++){
+						if(arr[j] > arr[j +1]){
+								let temp = arr[j];
+								arr[j] = arr[j +1];
+								arr[j +1] = temp;
+								noswaps =		false;
+					}
+				}
+				if(noswaps)break;
+			}
+			document.getElementById('ver3').innerHTML =	arr;
+		}
+	</script>
+</body>
+</html>

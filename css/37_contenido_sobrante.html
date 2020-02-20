@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contenido Sobrante (overflow)</title>
+	<style>
+		section.caja {
+			border: 2px solid blue;
+			height: 200px;
+			padding: 4px;
+			display: inline-block;
+			width: 150px;
+			vertical-align: top;
+		}
+		section.caja h4 {
+			background-color: rgba(80,9,0,.8);
+			margin: 0px;
+			padding: 10px;
+		}
+		section.caja2 {
+			overflow: hidden;
+		}
+		section.caja3 {
+			overflow: scroll;
+		}
+		h4 {
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<h1>Contenido Sobrante (overflow)</h1>
+	<section class="caja caja1"><h4>Overflow Visible</h4>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero nam quas assumenda debitis dolor, neque minus consectetur, provident corporis ea eos aperiam ipsam excepturi veniam eveniet earum dolore. Alias, consequuntur necessitatibus recusandae amet sunt error a iusto soluta. Neque tenetur itaque atque reprehenderit alias voluptas architecto commodi facilis sunt, praesentium.
+	</p>
+	</section>
+	<!--  -->
+	<section class="caja caja2">
+		<h4>Overflow Hidden</h4>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero nam quas assumenda debitis dolor, neque minus consectetur, provident corporis ea eos aperiam ipsam excepturi veniam eveniet earum dolore. Alias, consequuntur necessitatibus recusandae amet sunt error a iusto soluta. Neque tenetur itaque atque reprehenderit alias voluptas architecto commodi facilis sunt, praesentium.
+	</p>
+	</section>
+	<!--  -->
+	<section class="caja caja3">
+		<h4>Overflow croll</h4>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero nam quas assumenda debitis dolor, neque minus consectetur, provident corporis ea eos aperiam ipsam excepturi veniam eveniet earum dolore. Alias, consequuntur necessitatibus recusandae amet sunt error a iusto soluta. Neque tenetur itaque atque reprehenderit alias voluptas architecto commodi facilis sunt, praesentium.
+	</p>
+	</section>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+  background-color: #003145;
+  font: 16px Arial;
+}
+
+h1 {
+  font-size: 3em;
+  background: linear-gradient(to top, #369AC3, #B5187F);
+  margin: 50px auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  transition: all 0.5s ease;
+  width: 580px;
+}
+
+a:link.btn,
+a:visited.btn {
+  border: 1px solid lime;
+  border-radius: 4px;
+  background: linear-gradient(to top, #42DB0C, #F22222);
+  display: block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  width: 120px;
+  margin: 90px auto;
+}
+a:link.btn:hover,
+a:visited.btn:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+section.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0px;
+  opacity: 0;
+  pointer-events: none;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  transition: all 0.5s ease;
+  transform: scale(0.2) translateX(1000px);
+  z-index: 9999;
+}
+section.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1) translateY(0px);
+}
+section.modal > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  padding: 20px;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-40%);
+  transform: translateX(-50%);
+  width: 400px;
+}
+section.modal > div h2 {
+  color: blue;
+  position: relative;
+}
+section.modal > div h2:after {
+  content: "SI PUEDE VOTAR";
+}
+section.modal > div a:link,
+section.modal > div a:visited {
+  font-size: 2em;
+  display: block;
+  text-decoration: none;
+  color: crimson;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}

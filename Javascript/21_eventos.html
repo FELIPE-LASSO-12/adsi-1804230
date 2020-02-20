@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body onload="bienvenida();" id="bd">
+	<main>
+		<h1>Eventos</h1>
+		<h4>Doble Click</h4>
+		<button id="btnDC"># de doble clicks = 0</button>
+		<h4>Presionar tecla</h4>
+		<input type="text" id="iname" placeholder="Ingresar Nombre Completo">
+		<output id="pname"></output>
+		<h4>Redimensionar ventana</h4>
+		<output id="wbd"></output>
+		<h4>Cambiar Valor</h4>
+		<select id="bgcolor">
+			<option value="1">Selecciones Color fondo...</option>
+			<option value="2">Naranja</option>
+			<option value="3">Rosado</option>
+			<option value="4">Amarillo</option>
+		</select>
+		<h4>Mouse Over/Out</h4>
+		<img src="imgs/ryuk1.jpg" id="imgr" width="280">
+	</main> 
+	<script>
+		//variables 
+		var btnDC 	= document.getElementById('btnDC');
+		var name    = document.getElementById('iname');
+		var pname   = document.getElementById('pname');
+		var bd      = document.getElementById('bd');
+		var wbd     = document.getElementById('wbd');
+		var bgcolor = document.getElementById('bgcolor');
+		var imgr    = document.getElementById('imgr');
+
+		var cntDC = 0;
+		//Eventos
+		btnDC.ondbclick = function() {
+			this.innerHTML = "# de doble clicks = "+cntDC++;
+		}
+		iname.onkeyup = function(){ 
+			pname.innerHTML  = this.value;
+		}
+		bd.onrezise = function() {
+			wbd.innerHTML = "Ancho de la ventana: " +window.outerWidth+" px";
+		}
+		bgcolor.onchange = function() {
+			if(this.value == '1'){
+				bd.style.backgroundColor = "white";
+			}
+			if(this.value == '2'){
+				bd.style.backgroundColor = "orange";
+			}
+			if(this.value == '3'){
+				bd.style.backgroundColor = "pink";
+			}
+			if(this.value == '4'){
+				bd.style.backgroundColor = "yellow";
+			}
+		}
+		imgr.onmouseover = function() {
+			this.src = "imgs/ryuk2.jpg";
+		}
+		imgr.onmouseout = function() {
+			this.src = "imgs/ryuk1.jpg";
+		}
+		//Funciones
+		function bienvenida(){
+			alert('Bienvenidos:\nLa pagina ha cargando con exito!')
+		}
+	</script>
+</body>
+</html>

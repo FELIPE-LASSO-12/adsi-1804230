@@ -1,0 +1,123 @@
+@font-face {
+	font-family: Calculator;
+	src:url(../fonts/Calculator.ttf);
+}
+
+main.calc {
+	background: url(../imgs/Illu/calc.png) no-repeat center;
+	height: 678px;
+	width: 470px;
+	margin:120px auto;
+	position: relative;
+}
+
+main.calc output#display {
+	display: block;
+	height: 100px;
+	font-size: 2.4em;
+	font-family: Calculator;
+	left: 26.7px;
+	line-height: 3em;
+	position: absolute;
+	text-align: right;
+	top: 19px;
+	width: 415px;
+}
+
+main.calc ul.buttons {
+	list-style: none;
+	left: 27px;
+	margin: 0;
+	padding: 0;
+	width: 415px;
+	position: absolute;
+	top: 140px;
+}
+main.calc ul.buttons li {
+	display: inline-block;
+	margin: 6.5px 0px 6.5px 14px;
+	height: 90px;
+	width: 90px;
+	
+}
+
+main.calc ul.buttons li:nth-child(-n+4) {
+	margin-top: 0px;
+}
+main.calc ul.buttons li:nth-child(4n+1) {
+	margin-left: 0px;
+}
+main.calc ul.buttons li {
+	background-repeat: no-repeat;
+	background-position: center;
+	transition: 0.25s all ease-in;
+}
+main.calc ul.buttons li:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+main.calc ul.buttons li:nth-child(1) {
+	background-image: url(../imgs/Illu/n7.png);
+}
+main.calc ul.buttons li:nth-child(2) {
+	background-image: url(../imgs/Illu/n8.png);
+}
+main.calc ul.buttons li:nth-child(3) {
+	background-image: url(../imgs/Illu/h9.png);
+}
+main.calc ul.buttons li:nth-child(4) {
+	background-image: url(../imgs/Illu/mod.png);
+}
+main.calc ul.buttons li:nth-child(5) {
+	background-image: url(../imgs/Illu/n4.png);
+}
+main.calc ul.buttons li:nth-child(6) {
+	background-image: url(../imgs/Illu/n5.png);
+}
+main.calc ul.buttons li:nth-child(7) {
+	background-image: url(../imgs/Illu/n6.png);
+}
+main.calc ul.buttons li:nth-child(8) {
+	background-image: url(../imgs/Illu/prod.png);
+}
+main.calc ul.buttons li:nth-child(9) {
+	background-image: url(../imgs/Illu/n1.png);
+}
+main.calc ul.buttons li:nth-child(10) {
+	background-image: url(../imgs/Illu/n2.png);
+}
+main.calc ul.buttons li:nth-child(11) {
+	background-image: url(../imgs/Illu/n3.png);
+}
+main.calc ul.buttons li:nth-child(12) {
+	background-image: url(../imgs/Illu/subs.png);
+}
+main.calc ul.buttons li:nth-child(13) {
+	background-image: url(../imgs/Illu/n0.png);
+}
+main.calc ul.buttons li:nth-child(14) {
+	background-image: url(../imgs/Illu/dot.png);
+}
+main.calc ul.buttons li:nth-child(15) {
+	background-image: url(../imgs/Illu/plus.png);
+}
+main.calc ul.buttons li:nth-child(15) {
+	background-image: url(../imgs/Illu/plus.png);
+	margin-right: 60px;
+}
+main.calc ul.buttons li:nth-child(16) {
+	background-image: url(../imgs/Illu/equal.png);
+	height: 195px;
+	position: absolute;
+	right: 2px;
+	bottom: 10px;
+}
+main.calc ul.buttons li:nth-child(17) {
+	background-image: url(../imgs/Illu/clear.png);
+}
+main.calc ul.buttons li:nth-child(18) {
+	background-image: url(../imgs/Illu/aclear.png);
+}
+main.calc ul.buttons li:nth-child(19) {
+	background-image: url(../imgs/Illu/div.png);
+}

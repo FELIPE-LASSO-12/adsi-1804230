@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ordenamiento Radix</title>
+</head>
+<body>
+  <button type="button" name="button" onclick="ordenamientoRadixDesc([89,32,1,23,14,349,2005])">Obtener Digito</button>
+  <p id="f1"></p>
+      <script>
+        //Obtener valor de un determinado digito de numeros
+        function getDigit(num, digito) {
+        return Math.floor(Math.abs(num)/Math.pow(10,digito))% 10;
+        }
+        // Obtener cantidad de digitos de un numero ingresado por el usuario
+        function conteoDigitosNro(num) {
+          if (num == 0) return 1;
+          return Math.floor(Math.log10(Math.abs(num)))+1;
+        }
+
+        //Obtener mayor cantidad de digitos entre todo el arreglo
+        function cantidadMayorDigi(arregloNumeros) {
+          let maximaCantDigitos = 0;
+          for (var i = 0; i < arregloNumeros.length; i++) {
+            //conteoDigitosNro(arregloNumeros[i] devuelve el valor de determinada
+            //posicion del array y es lo que le ingresa como parametro a la funcion conteoDigitosNro
+            maximaCantDigitos = Math.max(maximaCantDigitos,conteoDigitosNro(arregloNumeros[i]));
+          }
+          return maximaCantDigitos;
+        }
+
+        function ordenamientoRadix(arregloNumeros) {
+          let  maximaCantDigitos = cantidadMayorDigi(arregloNumeros);
+          //EL numero de con mayor cantidad de digitos determina la cantidad de iteraciones de la funcion
+          for (let i = 0; i < maximaCantDigitos; i++) {
+            let posicionamientoNro = Array.from({length: 10},()=>[]);
+            for (var j = 0; j < arregloNumeros.length; j++) {
+              let digitos = getDigit(arregloNumeros[j],i);
+              //Estoy llenando el arreglo vacio co nombre posicionamientoNro
+              posicionamientoNro[digitos].push(arregloNumeros[j]);
+            }
+            arregloNumeros=[].concat(...posicionamientoNro);
+          }
+          return arregloNumeros;
+        }
+        function ordenamientoRadixDesc(arregloNumeros) {
+          let  maximaCantDigitos = cantidadMayorDigi(arregloNumeros);
+          //EL numero de con mayor cantidad de digitos determina la cantidad de iteraciones de la funcion
+          for (let i = 0; i < maximaCantDigitos; i++) {
+            let posicionamientoNro = Array.from({length: 10},()=>[]);
+            for (var j = 0; j < arregloNumeros.length; j++) {
+              let digitos = getDigit(arregloNumeros[j],i);
+              //Estoy llenando el arreglo vacio co nombre posicionamientoNro
+              posicionamientoNro[digitos].push(arregloNumeros[j]);
+            }
+            arregloNumeros=[].concat(...posicionamientoNro);
+          }
+          document.getElementById('f1').innerHTML =  arregloNumeros.reverse();
+        }
+      </script>
+</body>
+</html>

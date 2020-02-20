@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Caja(Sombras)</title>
+	<style>
+		section {
+			border: 2px solid grey;
+			height: 200px;
+			margin: 60px auto;
+			text-align: center;
+			width: 400px;
+		}
+		section.sombra1 {
+			box-shadow: 0px 0px 20px #000;
+		}
+				section.sombra2 {
+			box-shadow: 10px 10px 20px #000;
+		}
+				section.sombra3 {
+			box-shadow: -20px 0px 80px #000 ;
+		}
+				section.sombra4 {
+			box-shadow: 0px 0px 40px blue inset;
+		}
+				section.sombra5 {
+			box-shadow: 0px 0px 100px yellow inset,
+			0px 0px 150px blue inset,
+			0px 0px 200px red inset;
+
+		}
+	</style>
+</head>
+<body>
+	<h1>Caja(Sombras)</h1>
+	<section class="sombra1">
+		<h3>box-shadow 0px 0px 20px</h3>
+	</section>
+	<section class="sombra2">
+		<h3>box-shadow 10px 10px 20px</h3>
+	</section>
+	<section class="sombra3">
+		<h3>box-shadow -20px 0px 80px</h3>
+	</section>
+	<section class="sombra4">
+		<h3>box-shadow 0px 0px 40px</h3>
+	</section>
+	<section class="sombra5">
+		<h3>box-shadow :xyx</h3>
+	</section>
+</body>
+</html>

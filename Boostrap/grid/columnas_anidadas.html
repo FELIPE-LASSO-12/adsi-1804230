@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<title>Columnas Anidadas</title>
+	<style>
+		.container {
+			margin-top: 40px;
+		}
+		.row {
+			background: #2CE3B1;
+		}
+		.columna {
+			background: #82E3F8;
+			border: 1px solid black;
+			text-align: center;
+		}
+		.columnainterior {
+			background: #19EB23;
+			text-align: center;
+			border: 1px solid black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="columna col-md-6">
+				Columna1
+				<div class="row">
+					<div class="col columnainterior">Columna2</div>
+					<div class="col columnainterior">Columna3</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.4.1.js"></script>
+</body>
+</html>

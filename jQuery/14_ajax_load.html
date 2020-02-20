@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX (Load)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		body {
+			font-family: Gotica;
+			text-align: center;
+			
+		}
+		section.text {
+			border: 2px dotted #4E8685;
+			margin: 10px auto;
+			padding: 10px;
+			width: 500px;
+		}
+		button {
+			border: 1px solid #4E8685;
+			padding: 10px;
+		}
+		button:hover {
+			background-color: #4E8685;
+			color: #fff;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>AJAX (Load)</h1>
+		<section class="text"></section>
+		<button class="btn-load">Cargar Texto</button>
+		<button class="btn-llp">Cargar Ultimo Párrafo</button>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			//Eventos
+			$('.btn-load').click(function(event) {
+				$('.text').load('text/lorem.txt').hide().fadeIn(1200);
+			});
+			
+
+		$('.btn-llp').click(function(event) {
+			$('.text').load('text/lorem.txt .lp').hide().fadeIn(1200);
+		});
+
+	});
+	</script>
+</body>
+</html>

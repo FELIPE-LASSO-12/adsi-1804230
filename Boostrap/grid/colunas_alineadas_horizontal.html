@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<title>Columnas Alienadas Horizontalmente</title>
+	<style>
+		.row {
+			background: #2CE3B1;
+			height: 150px;
+			margin-top: 20px;
+		}
+		.col {
+			background: #82E3F8;
+			text-align: center;
+			border: 1px solid black;
+		}
+		.row div {
+			text-align: center;
+			
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row align-items-start">
+			<div class="col align-self-start">COLUMNA #1</div>
+			<div class="col align-self-center">COLUMNA #2</div>
+			<div class="col align-self-end">COLUMNA #3</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="col">COLUMNA #1</div>
+			<div class="col">COLUMNA #2</div>
+			<div class="col">COLUMNA #3</div>
+		</div>
+		<div class="row align-items-end">
+			<div class="col">COLUMNA #1</div>
+			<div class="col">COLUMNA #2</div>
+			<div class="col">COLUMNA #3</div>
+		</div>
+	</div>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-3.4.1.js"></script>
+</body>
+</html>

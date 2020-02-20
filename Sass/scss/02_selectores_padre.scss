@@ -1,0 +1,46 @@
+main {
+	margin: 20px auto;
+	width: 960px;
+	article {
+		display: inline-block;
+		width: 200px;
+		height: 400px;
+		margin: 2px;
+		overflow: hidden;
+		width: calc(960px / 3.1);
+		figure {
+			background: url(../imgs/goku.png) no-repeat center;
+			background-size: 100%;
+			height: 400px;
+			margin: 0;
+			padding: 0px;
+			position: relative;
+			transition: all 0.5s ease-in-out;
+		div {
+			background-color: rgba(0,255,100, .5);
+			bottom: -200px;
+			padding: 20px 0px;
+			position: absolute;
+			transition: all 0.5s 0.5s ease-in;
+			text-align: center;
+			width: calc(960px / 3.1);
+			}
+		button {
+			border: 3px solid lime;
+			padding: 10px;
+			width: 120px;
+			border-radius: 10px;
+			background-color: rgba(0,255,100, .5 )
+		}
+		}
+		&:hover figure {
+			cursor: pointer;
+			background-size: 70%;
+			}
+		&:hover figure div {
+			bottom: 0;
+
+		}
+
+		}
+	}

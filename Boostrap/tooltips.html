@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/fontello.css">
+	<title>Tooltips</title>
+	<style>
+		.redes-sociales {
+			padding: 40px 0;
+			margin-bottom: 40px;
+		}
+		.redes-sociales .icono {
+			width: 100px;
+			height: 100px;
+			font-size: 40px;
+			line-height: 100px;
+			color: #fff;
+			text-align: center;
+			background: #cbcbcbcb;
+			display: inline-block;
+			margin: 0 20px;
+			text-decoration: none;
+			border-radius: 100px;
+			transition: all 0.3s ease;
+		}
+		.redes-sociales .facebook { background:#2750E9; }
+		.redes-sociales .twitter { background:#3b5998; }
+		.redes-sociales .instagram { background: -webkit-linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+	</style>
+</head>
+<body>
+	<!-- Redes Sociales -->
+	<header>
+		<div class="container">
+			<div class="row redes-sociales justify-content-center">
+				<div class="col">
+					<a href="#" class="icono twitter icon-twitter"></a>
+					<a href="#" class="icono facebook icon-facebook"></a>
+					<a href="#" class="icono instagram icon-instagram"></a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col">
+				<!-- Tooltips de enlace -->
+				<p>
+					Lorem ipsum dolor sit amet, <a href="#" data-toggle="tooltip" data-placement="bottom" title="Tooltips en enlace">consectetur adipisicing </a>elit. Commodi sequi, porro, minima eligendi cum magnam sapiente ex illo obcaecati non. Amet, nam voluptatum ipsum debitis tempora molestias qui officiis aliquid maxime sed, id itaque praesentium laborum similique atque! Eaque ratione vel fugit, harum. Incidunt eveniet cum non laborum, officiis quia modi beatae aliquam assumenda vitae animi soluta eius explicabo facilis, quaerat veritatis provident autem sed illum! At, nobis aliquid sapiente.
+				</p>
+				<div class="mt-5">
+				<!-- Tooltips en botones -->
+				<button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="top" title="Tooltips en enlace">Botón</button>
+				<button type="button" class="btn btn-warning" data-toggle="tooltip" data-placement="bottom" title="Tooltips en enlace">Botón</button>
+				<button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltips en enlace">Botón</button>
+				<button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Tooltips en enlace">Botón</button>
+				</div>
+				<div class="row">
+					<div class="img col mt-5">
+						<img src="imgs/bg4.jpg" class=" rounded-circle img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(function () {
+  			$('[data-toggle="tooltip"]').tooltip()
+		});
+	</script>
+</body>
+</html>

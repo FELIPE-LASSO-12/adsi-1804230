@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		div.ball {
+			background: linear-gradient(#20C7E0,#0F6C60);
+			cursor: pointer;
+			height: 120px;
+			margin: 20px auto;
+			transition: all 0.5s ;
+			width: 120px;
+		}
+		.enter {
+			transform: scale(2)rotate(180deg);
+		}
+		.leave {
+			transform: scale(1)rotate(-360deg);
+		}
+		input {
+			border-radius: 10px;
+			background-color: rgba(200,200,0,.6);
+			outline: none;
+			padding: 10px;
+
+		}
+		output {
+			font-size: 1em;
+		}
+		select {
+			border-radius: 10px;
+			padding: 10px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Eventos</h1>
+		<h3>Eventos del Raton:</h3>
+		<div class="ball"></div>
+		<h3>Eventos del Teclado:</h3>
+		<input type="text" placeholder="Texto">
+		<h3>Eventos del Formulario:</h3>
+		<output></output>
+		<select>
+			<option value="">Seleccione el Tamaño del Texto...</option>
+			<option value="0">Muy Pequeño</option>
+			<option value="1">Mediano</option>
+			<option value="2">Muy Grande</option>
+		</select>
+		<p class="status"></p>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.ball').mouseenter(function(event) {
+				$(this).removeClass('leave').addClass('enter');
+			});
+			$('.ball').mouseleave(function(event) {
+				$(this).removeClass('enter').addClass('leave');
+			});
+			$('input').keyup(function(event) {
+				if ($(this).val().length < 20) {
+					$('output').text($(this).val());
+				}
+				
+			});
+			//-----------------------------
+			$('select').change(function(event) {
+				switch($(this).val()) {
+					case '0':
+						$('body').css('font-size','0.5em');
+						break;
+					case '1':
+						$('body').css('font-size','1em');
+						break;
+					case '2':
+						$('body').css('font-size','3em');
+						break;
+				}
+			});
+			//--------------------------------
+			$(window).resize(function(event) {
+				$ww = $(this).outerWidth();
+				$('p.status').text('Ha cambiado el ancho de la ventana: ' +$ww+"px");
+			});
+
+			$(window).scroll(function(event) {
+				$ds = $(this).scrollTop();
+				if ($ds < 0) 
+				$('p.status').text('Desplazamiento Scroll: Arriba');
+			else 
+				$('p.status').text('Desplazamiento Scroll: Abajo');
+			});
+		});
+
+	</script>
+</body>
+</html>

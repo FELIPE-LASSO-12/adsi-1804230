@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fondos Repetir</title>
+	<style>
+		h1 {
+			text-shadow: 1px 4px 6px red;
+		}
+		body {
+			background-color: rgba(255, 255, 0,0.5)
+		}
+		section {
+			background-image: url(imgs/pikachu.png);
+			
+			height: 1090px;
+			width: 1000px;
+			background-color: #FFF;
+			border: 10px double #E3EA1F;
+			margin: 10px auto;
+
+		}
+		section h2 {
+			background-color: rgb(255, 255, 0,0.3);
+			color: #000;
+			margin-top: 1px;
+			padding: 20px;
+			text-align: center;
+			text-shadow: 2px 5px 7px red;
+		}
+		section.caja1 {
+			background-repeat: repeat;
+		}
+		section.caja2 {
+			background-repeat: no-repeat;
+		}
+		section.caja3 {
+			background-repeat: repeat-x;
+		}
+		section.caja4 {
+			background-repeat: repeat-y;
+		}
+	</style>
+</head>
+<body>
+	<h1>Fondos Repetir</h1>
+	<section class="caja1">
+		<h2>REPETIR</h2>
+	</section>
+	<section class="caja2">
+		<h2> NO REPETIR</h2>
+	</section>
+	<section class="caja3">
+		<h2>REPETIR en X</h2>
+	</section>
+	<section class="caja4">
+		<h2>REPETIR en Y</h2>
+	</section>
+</body>
+</html>

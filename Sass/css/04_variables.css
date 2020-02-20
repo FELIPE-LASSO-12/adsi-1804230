@@ -1,0 +1,55 @@
+body {
+  font: 16px Helvetica;
+}
+
+section {
+  margin: 20px auto;
+  padding: 20px;
+  width: 743px;
+}
+section nav.menu {
+  margin: 0;
+  padding: 0;
+}
+section nav.menu ul {
+  background-color: #40b6b8;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  width: 743px;
+}
+section nav.menu ul li {
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #fff;
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+  width: 160px;
+  transition: all 0.5s ease-in;
+}
+section nav.menu ul li:hover {
+  background-color: #286b6d;
+  color: white;
+  cursor: pointer;
+}
+section nav.menu ul li ul.submenu {
+  position: absolute;
+  left: -10px;
+  opacity: 0;
+  top: 40px;
+  transition: all 0.5s ease-in;
+  transform: scale(0.5) translateY(-50px) skew(25deg);
+  width: 180px;
+}
+section nav.menu ul li:hover > ul.submenu {
+  opacity: 1;
+  transform: scale(1) translateX(0px) skew(0deg);
+}
+section nav.menu ul li:hover > ul.submenu li {
+  display: block;
+  margin: 4px 0px;
+}
+section nav.menu ul li:hover > ul.submenu li:hover {
+  background-color: #b9586c;
+}

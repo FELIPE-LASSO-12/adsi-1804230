@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Popover</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-6 mb-5">
+				<!-- Cuadros emergentes en botones -->
+				<h2 class="mb-3">Popovers</h2>
+				<button class="btn btn-primary" data-placement="top" data-toggle="popover" title="Titulo Popover" data-content="Lorem ipsum dolor sit.">Mensaje Arriba</button>
+			</div>	
+			<div class="col-6 mb-5">
+				<!-- Cuadros emergentes en botones -->
+				<h2 class="mb-3">Popovers</h2>
+				<button class="btn btn-success" data-placement="bottom" data-toggle="popover" title="Titulo Popover" data-content="Lorem ipsum dolor sit.">Mensaje Abajo</button>
+			</div>
+			<div class="col-6 mt-5">
+				<!-- Cuadros emergentes en botones -->
+				<h2 class="mb-3">Popovers</h2>
+				<button class="btn btn-warning" data-placement="left" data-toggle="popover" title="Titulo Popover" data-content="Lorem ipsum dolor sit.">Mensaje Izquierda</button>
+			</div>
+			<div class="col-6 mt-5">
+				<!-- Cuadros emergentes en botones -->
+				<h2 class="mb-3">Popovers</h2>
+				<button class="btn btn-danger" data-placement="right" data-toggle="popover" title="Titulo Popover" data-content="Lorem ipsum dolor sit.">Mensaje Derecha</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+
+	<script>
+		$(function(){
+			$('[data-toggle="popover"]').popover();
+		});
+	</script>
+</body>
+</html>

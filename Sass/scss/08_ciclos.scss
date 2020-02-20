@@ -1,0 +1,37 @@
+body {
+	font: 16px Tahoma;
+	margin: 0;
+	padding: 0;
+	h1 {
+		text-align: center;
+		
+	}
+}
+main {
+	ul.colors {
+		list-style: none;
+		margin: 100px auto;
+		padding: 0;
+		width: 1066px;
+		li {
+			border: thin solid rgba(0,0,0, .2);
+			display: inline-block;
+			margin: 0;
+			height: 400px;
+			transition: all 0.5s ease;
+			width: 100px;
+			//  - - - - - - - - - - 
+			/*Ciclos*/
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					background-color: rgb(255, 20*$i, 0);
+				}
+				&:hover:nth-child(#{$i}) {
+					background-color: rgb(0, 20*$i, 0);
+					transform: scale(.9);
+				}
+			}
+
+		}
+	}
+}

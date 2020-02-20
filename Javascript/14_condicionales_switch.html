@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Condionales(Switch)</title>
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		div#day {
+			background: url(imgs/Semana.png) no-repeat;
+			margin: 0px auto;
+			width: 388px;
+			height: 140px;
+		}
+		div#day.lunes {
+			background-position: 0px 0px;
+			
+		}
+		div#day.martes {
+			background-position: 0px -150px;
+			
+		}
+		div#day.miercoles {
+			background-position: 0px -292px;
+			
+		}
+		div#day.jueves {
+			background-position: 0px -443px;
+			
+		}
+		div#day.viernes {
+			background-position: -390px 0px;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Condionales(Switch)</h1>
+		<div id="day"></div>
+
+	</main>
+	<script>
+		var day = document.getElementById('day');
+		var date = new Date();
+		switch(date.getDay()) {
+			case 1: {
+				// console.log('hoy es Lunes');
+				day.classList.add('Lunes');
+				break;
+			}
+			case 2: {
+				// console.log('hoy es Martes');
+				day.classList.add('Martes');
+				break;
+			}
+			case 3: {
+				// console.log('hoy es Miercoles');
+				day.classList.add('Miercoles');
+				break;
+			}
+			case 4: {
+				// console.log('hoy es Jueves');
+				day.classList.add('jueves');
+				break;
+			}
+			case 5: {
+				// console.log('hoy es Viernes');
+				day.classList.add('Viernes');
+				break;
+			}
+			default: {
+				alert('FIn de semana -No hay clases');
+				break;
+			}
+		}
+	</script>
+</body>
+</html>

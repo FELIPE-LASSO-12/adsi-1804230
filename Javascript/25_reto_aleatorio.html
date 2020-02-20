@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto Aleatorio (Baloto)</title>
+	<style>
+		body {
+			background: url(imgs/Baloto/bg_baloto.jpg) no-repeat center;
+			margin: 0;
+			height: 125vh;
+		}
+		body {
+			background-color: #2F8AC4;
+		}
+		h1 {
+			color: #ee0e0a;
+			text-align: center;
+			font-family: Arial;
+			text-decoration: underline;
+		}
+		img {
+			display: block;
+			margin: 40px auto;
+			width: 280px;
+		}
+		div.ball img {
+			display: inline-block;
+			margin: 30px;
+			width: 150px;
+			position: relative;
+			top: -200;
+  
+
+		}
+		section.numeros div {
+			display: inline-block;
+			font-size: 2.5em;
+			left: 70px;
+			margin-left: 40px;	
+			top: -125px;
+			text-align: center;
+			position: relative;
+			width: 150px;
+			text-shadow: 2px 0px 2px white;
+		}
+		
+		img.logo:hover {
+			transform: scale(1.1);
+			transition: 0.5s ease-in;
+		}
+
+		section.numeros div#bt1:nth-child(1) {
+			left: -10px;
+		}
+		section.numeros div#bt2:nth-child(2) {
+			left: 10px;
+		}
+		section.numeros div#bt3:nth-child(3) {
+			left: 30px;
+		}
+		section.numeros div#bt4:nth-child(4) {
+			left: 50px;
+		}
+		section.numeros div#bt5:nth-child(5) {
+			left: 70px;
+		}
+		section.numeros div#bt6:nth-child(6) {
+			left: 90px;
+			text-shadow: 2px 0px 2px #000;
+			color: #fff;
+		}
+
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Reto Aleatorio (Baloto)</h1>
+
+		<img src="imgs/Baloto/logo_baloto.png" class="logo">
+
+		<div class="ball">
+		<img src="imgs/Baloto/bg_balota1.png">
+		<img src="imgs/Baloto/bg_balota1.png">
+		<img src="imgs/Baloto/bg_balota1.png">
+		<img src="imgs/Baloto/bg_balota1.png">
+		<img src="imgs/Baloto/bg_balota1.png">
+		<img src="imgs/Baloto/bg_balota2.png">
+		</div>
+
+		<section class="numeros">
+			<div id="bt1"></div>
+			<div id="bt2"></div> 
+			<div id="bt3"></div>
+			<div id="bt4"></div>
+			<div id="bt5"></div>
+			<div id="bt6"></div>
+		</section>
+		
+
+	</main>
+	<script>
+		//Variables
+		var blt1 = document.getElementById('bt1');
+		var blt2 = document.getElementById('bt2');
+		var blt3 = document.getElementById('bt3');
+		var blt4 = document.getElementById('bt4');
+		var blt5 = document.getElementById('bt5');
+		var blt6 = document.getElementById('bt6');
+		
+
+
+		//Eventos
+		onload = function() {
+			blt1.innerHTML  = Math.round(Math.random()*(43 -1)+ 1 );
+			blt2.innerHTML += Math.round(Math.random()*(43 -1)+ 1 );
+			blt3.innerHTML += Math.round(Math.random()*(43 -1)+ 1 );
+			blt4.innerHTML += Math.round(Math.random()*(43 -1)+ 1 );
+			blt5.innerHTML += Math.round(Math.random()*(43 -1)+ 1 );
+			blt6.innerHTML += Math.round(Math.random()*(16 -1)+ 1 );
+
+		}
+		
+		
+	</script>
+
+</body>
+</html>
