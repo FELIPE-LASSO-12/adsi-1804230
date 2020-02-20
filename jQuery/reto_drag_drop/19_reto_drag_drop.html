@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto(Drag/Drop)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<style>
+		section.columns {
+			background-color: #6CA59A;
+			margin: 20px auto;
+			width: 370px;
+
+		}
+		section.columns aside.column {
+			display: inline-block;
+			vertical-align: top;
+			width: 120px;
+			z-index: -999;
+		}
+		aside.column h4 {
+			background-color: #1625B9;
+			color: #fff;
+			padding: 10px;
+			margin: 0;
+		}
+		aside.column:nth-child(1) h4 {
+			border-bottom: 4px solid #03FB0F;
+		}
+		aside.column:nth-child(2) h4 {
+			border-bottom: 4px solid #FF7300;
+		}
+		aside.column:nth-child(3) h4 {
+			border-bottom: 4px solid #F60000;
+		}
+		aside.column div {
+			background-color: #363434;
+			height: 450px;
+
+		}
+		aside.column div.pk {
+			height: 150px;
+			position: relative;
+			width: 120px;
+			
+		}
+		aside.column div.pk11 {
+			background: url(imgs/pk11.png) no-repeat center;
+		}
+		aside.column div.pk21 {
+			background: url(imgs/pk21.png) no-repeat center;
+		}
+		aside.column div.pk31 {
+			background: url(imgs/pk31.png) no-repeat center;
+		}
+	</style>
+</head>
+<body>
+	<main>
+	<h1>Reto(Drag/Drop)</h1>
+	<section class="columns">
+		<aside class="column">
+			<h4>Evolución 1</h4>
+			<div class="stage stage1">
+				<div class="pk pk11"></div>
+				<div class="pk pk21"></div>
+				<div class="pk pk31"></div>
+			</div>
+		</aside>
+		<aside class="column">
+			<h4>Evolución 2</h4>
+			<div class="stage stage2">
+				<!-- <div class="pk pk12"></div>
+				<div class="pk pk22"></div>
+				<div class="pk pk32"></div> -->
+			</div>
+		</aside>
+		<aside class="column">
+			<h4>Evolución 3 </h4>
+			<div class="stage stage3">
+				<!-- <div class="pk pk13"></div>
+				<div class="pk pk23"></div>
+				<div class="pk pk33"></div> -->
+			</div>
+		</aside>
+	</section>
+	</main>
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.pk').draggable({
+				containment: '.columns',
+				cursor: 'move',
+				snap: '.stage',
+				snapMode:'inner',
+				revert: 'invalid'
+			});
+			$('div.stage2').droppable({
+				accept: '.pk11, .pk21, .pk31',
+				drop: function(evt, ui) {
+					$drag = $(ui.draggable);
+					$drop = $(this);
+					if ($drag.hasClass('pk11')) {
+						$drag.css('background', 'url(imgs/pk12.png)');
+						$drag.removeClass('pk11');
+						$drag.addClass('pk12');
+						$drag.addClass('animated pulse'); 
+					}
+					if ($drag.hasClass('pk21')) {
+						$drag.css('background', 'url(imgs/pk22.png)');
+						$drag.removeClass('pk21');
+						$drag.addClass('pk22');
+						$drag.addClass('animated pulse'); 
+					}
+					if ($drag.hasClass('pk31')) {
+						$drag.css('background', 'url(imgs/pk32.png)');
+						$drag.removeClass('pk31');
+						$drag.addClass('pk32');
+						$drag.addClass('animated pulse'); 
+					}
+					
+				}
+			});
+			$('div.stage3').droppable({
+				accept: '.pk12, .pk22, .pk32',
+				drop: function(evt, ui) {
+					$drag = $(ui.draggable);
+					$drop = $(this);
+					if ($drag.hasClass('pk12')) {
+						$drag.css('background', 'url(imgs/pk13.png)');
+						$drag.removeClass('pk12');
+						$drag.addClass('pk13');
+						$drag.addClass('animated swing');
+					}
+					if ($drag.hasClass('pk22')) {
+						$drag.css('background', 'url(imgs/pk23.png)');
+						$drag.removeClass('pk22');
+						$drag.addClass('pk23');
+						$drag.addClass('animated swing');
+					}
+					if ($drag.hasClass('pk32')) {
+						$drag.css('background', 'url(imgs/pk33.png)');
+						$drag.removeClass('pk32');
+						$drag.addClass('pk33');
+						$drag.addClass('animated swing');
+					}
+					
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -3,13 +3,13 @@
 	 	$img = $_POST['img'];
 	 	switch ($img) {
 	 		case '1':
-	 			echo "imgs/toad.png";
+	 			echo "imgs/Scorpion.png";
 	 			break;
 	 		case '2':
-	 			echo "imgs/toadsworth.png";
+	 			echo "imgs/mk1.jpg";
 	 			break;
 	 		case '3':
-	 			echo "imgs/birdo.png";
+	 			echo "imgs/nob.jpg";
 	 			break;
 	 		
 	 		default:

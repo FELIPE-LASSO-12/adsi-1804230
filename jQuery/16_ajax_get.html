@@ -13,8 +13,8 @@
 			width: 160px;
 		}
 		div.loader{
-			background: url(imgs/load.gif) no-repeat center;
-			background-size: 50px;
+			background: url(imgs/ra.gif) no-repeat center;
+			background-size: 80px;
 			height: 50px;
 			margin: 20px auto;
 			margin: 30px;
@@ -51,8 +51,8 @@
 				$.get('php/references.php', { brn : $brn }, function(data) {
 					setTimeout(function() {
 						$('.loader').hide();
-						$('.references').fadeIn(4000).html(data);
-					},2000);
+						$('.references').fadeIn(2000).html(data);
+					},3000);
 				});
 			});
 		});
