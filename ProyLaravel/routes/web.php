@@ -34,3 +34,7 @@ Route::get('articles', function () {
     	echo $article->title."<br><hr>";
     }
 });
+
+//Resources
+
+Route::resource('users', 'UserController');
