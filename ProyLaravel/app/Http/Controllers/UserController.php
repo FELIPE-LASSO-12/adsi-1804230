@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -45,7 +46,9 @@ class UserController extends Controller
         $user->birthdate = $request->birthdate;
         $user->gender     = $request->gender;
         $user->address    = $request->address;
+        $user->email_verified_at = now();
         $user->password  = bcrypt($request['password']);
+        $user->remember_token    = Str::random(10);
 
         if ($user->save()) {
             return redirect('users')->with('message','El usuario '.$user->fullname.' Fue adicionado con éxito');
@@ -60,7 +63,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        // dd($user);
+        return view('users.show')->with('user',$user);
     }
 
     /**
