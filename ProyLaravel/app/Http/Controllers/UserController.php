@@ -76,7 +76,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        // dd($user);
+        return view('users.edit')->with('user',$user);
+
     }
 
     /**
@@ -88,7 +91,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+
+        if ($user->save()) {
+            return redirect('users')->with('message','El usuario '.$user->fullname.' Fue modificado con éxito');
+        }
     }
 
     /**
