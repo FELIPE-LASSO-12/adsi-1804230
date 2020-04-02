@@ -12,22 +12,25 @@
 		<h1 class="text-center">Lista de Usuarios</h1>
 		<hr>
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col">
 				<a href="{{url('users/create')}}" class="btn btn-success">
 					<i class="fa fa-plus" ></i>
 					Adicionar Usuario
 				</a>
 				<br><br>
 				@if (session('message'))
-				{{session('message')}}
+				<div class="alert alert-success">
+					{{session('message')}}
 				@endif
+				</div>
+				
 				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Nombre Completo</th>
 							<th>Correo Electrónico</th>
 							<th>Teléfono</th>
-							<th colspan="2" class="text-center">Acciones</th>
+							<th>Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -39,18 +42,19 @@
 								<td>
 								<a href="{{ url('users/'.$user->id) }}" class="btn btn-sm btn-primary">
 								<i class="fa fa-search"></i>
-									</a>
-								</td>
-								<td>
+								</a>
 								<a href="{{ url('users/'.$user->id.'/edit/') }}" class="btn btn-sm btn-info">
 								<i class="fa fa-pencil"></i>
 								</a>
-								</td>
-								<td>
-									<a href="{{ url('users/'.$user->id.'/delete/') }}" class="btn btn-sm btn-danger">
-								<i class="fa fa-trash"></i>
-								</a>
-								</td>
+									<form action="/users/{{$user->id}}" method="post" style="display: inline-block;">
+										@csrf
+										@method('delete')
+										<input type="hidden" name="_method" value="DELETE">
+										<button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Estas seguro quires eliminar el usuario')">
+											<i class=" fa fa-trash"></i>
+										</button>
+
+									</form>
 								
 								</td>	
 							</tr>

@@ -50,10 +50,10 @@
               		<label for="password">Contraseña:</label>
               		<input type="password" class="form-control" name="password" value="{{old('password')}}" required>
               	</div>
-              	<div class="form-group">
+              	<!-- <div class="form-group">
               		<label for="photo">Foto:</label>
               		<input type="file" class="form-control-file" accept="imgs/*" name="photo">
-              	</div>
+              	</div> -->
 				<!--  -->
               	<div class="form-group">
               		<button class="btn btn-success">
